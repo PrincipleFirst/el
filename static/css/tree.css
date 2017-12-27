@@ -1,0 +1,59 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+  font-size: 16px;
+  color: #333333;
+  background-color: #e2e2e2;
+  overflow: hidden;
+}
+
+.left {
+  height: 202px;
+  background-color: #273947;
+  overflow-y: scroll;
+}
+
+.l-tree {
+  text-align: center;
+  min-height: 100%;
+}
+
+.fixDiv {
+  position: fixed;
+  width: 810px;
+  height: 32px;
+  background: #334a5c;
+  z-index: 10;
+}
+
+.fixTree {
+  position: relative;
+  z-index: 12;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px
+}
+
+::-webkit-scrollbar-button:vertical {
+  display: none
+}
+
+::-webkit-scrollbar-corner, ::-webkit-scrollbar-track {
+  background-color: #e2e2e2
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, .3)
+}
+
+::-webkit-scrollbar-thumb:vertical:hover {
+  background-color: rgba(0, 0, 0, .35)
+}
+
+::-webkit-scrollbar-thumb:vertical:active {
+  background-color: rgba(0, 0, 0, .38)
+}
