@@ -21,6 +21,11 @@
         default: 0
       }
     },
+    watch: {
+      isExpand (newVal) {
+        // this.initArray()
+      }
+    },
     computed: {
       _isFix () {
         if (this.isExpand === true && this.isFix === true) {
@@ -69,8 +74,8 @@
         transform translateX(-30px)
         opacity 1
 
-    .is-fixed
-      position fixed
-      bottom 0
-      width 868px
+  .is-fixed
+    position fixed
+    bottom 0
+    width 868px
 </style>

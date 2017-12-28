@@ -76,7 +76,8 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[0].expand" :index="0" :isFix="fixGroups[0].fix" @switcher="switcherState"></collapseBar>
+        <collapseBar :isExpand="switchers[0].expand" :index="0" :isFix="fixGroups[0].fix"
+                     @switcher="switcherState"></collapseBar>
       </div>
       <h3>嵌套信息</h3>
       <p>可以在 Popover 中嵌套多种类型信息，以下为嵌套表格的例子。</p>
@@ -154,7 +155,8 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[1].expand" :index="1" :isFix="fixGroups[1].fix" @switcher="switcherState"></collapseBar>
+        <collapseBar :isExpand="switchers[1].expand" :index="1" :isFix="fixGroups[1].fix"
+                     @switcher="switcherState"></collapseBar>
       </div>
       <h3>嵌套操作</h3>
       <p>当然，你还可以嵌套操作，这相比 Dialog 更为轻量：</p>
@@ -211,7 +213,8 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[2].expand" :index="2" :isFix="fixGroups[2].fix" @switcher="switcherState"></collapseBar>
+        <collapseBar :isExpand="switchers[2].expand" :index="2" :isFix="fixGroups[2].fix"
+                     @switcher="switcherState"></collapseBar>
       </div>
       <h3>Attributes</h3>
       <table class="table">
@@ -368,6 +371,7 @@
 <script type="text/ecmascript-6">
   import collapseBar from 'components/collapseBar/collapseBar'
   import { collapseMixin } from 'common/js/mixin'
+  import { mapGetters } from 'vuex'
 
   export default {
     mixins: [collapseMixin],
@@ -399,6 +403,16 @@
           expand: false
         }],
         fixGroups: [{fix: false}, {fix: false}, {fix: false}]
+      }
+    },
+    computed: {
+      ...mapGetters([
+        'fixlist'
+      ])
+    },
+    watch: {
+      fixlist (newVal) {
+        this.fixGroups = newVal
       }
     },
     components: {

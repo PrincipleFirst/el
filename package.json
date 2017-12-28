@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "element-ui": "^2.0.8",
+    "lodash": "^4.17.4",
     "vue": "^2.5.10",
     "vue-router": "^3.0.1",
     "vuex": "^2.3.1"

@@ -115,11 +115,11 @@
 </template>
 
 <script type="text/ecmascript-6">
-  import { mapMutations, mapGetters } from 'vuex'
+  // import { mapActions, mapGetters } from 'vuex'
 
   const currentHeight = document.body.clientHeight / 3 - 80
   let show = false
-  let currentIndex = 0
+  // let currentIndex = 0
 
   export default {
     data () {
@@ -132,17 +132,17 @@
         this.bindActiveClass()
       }, 20)
     },
-    computed: {
-      ...mapGetters([
-        'metalist',
-        'fixlist'
-      ])
-    },
-    watch: {
-      metalist (newVal) {
-        // this.initArray()
-      }
-    },
+    // computed: {
+    //   ...mapGetters([
+    //     'metalist',
+    //     'fixlist'
+    //   ])
+    // },
+    // watch: {
+    //   metalist (newVal) {
+    //     // this.initArray()
+    //   }
+    // },
     methods: {
       bindActiveClass () {
         let sideNav = document.querySelector('.side-nav')
@@ -159,14 +159,19 @@
         }, false)
       },
       scroll (ev) {
-        if (ev.target.scrollTop > this.metalist[currentIndex]) {
-          if (this.fixlist[currentIndex].fix === true) {
-            return
-          }
-          console.log(this.fixlist)
-          this.fixlist[currentIndex].fix = true
-          this.setFixList(this.fixlist)
-        }
+        // if (ev.target.scrollTop > this.metalist[currentIndex].offsetTop) {
+        //   if (this.fixlist[currentIndex].fix === true) {
+        //     return
+        //   }
+        //   this.changeIndex(currentIndex, true)
+        // }
+        // if (ev.target.scrollTop > this.metalist[currentIndex].offsetHeight - 44) {
+        //   if (this.fixlist[currentIndex].fix === true) {
+        //     return
+        //   }
+        //   this.changeIndex(currentIndex, false)
+        //   currentIndex++
+        // }
         if (ev.target.scrollTop > currentHeight) {
           if (show === false) {
             show = true
@@ -178,10 +183,10 @@
             this.$emit('fadeOut')
           }
         }
-      },
-      ...mapMutations({
-        setFixList: 'SET_FIX_LIST'
-      })
+      }
+      // ...mapActions([
+      //   'changeIndex'
+      // ])
     }
   }
 </script>
