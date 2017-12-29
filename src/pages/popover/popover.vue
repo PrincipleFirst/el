@@ -36,7 +36,7 @@
             <el-button slot="reference">focus 激活</el-button>
           </el-popover>
         </div>
-        <div class="meta">
+        <div class="meta" data-index="0">
           <div class="description"><p>
             设置索引<code>ref</code>，在按钮中，我们注册了自定义指令<code>v-popover</code>，指向索引ID。<code>trigger</code>属性用于设置何时触发 Popover
             ，提供三种触发方式：<code>hover</code>, <code>click</code> 和 <code>focus</code>。第二种用法通过 <code>slot</code> 指定
@@ -79,7 +79,7 @@
         <collapseBar :isExpand="switchers[0].expand" :index="0" :isFix="fixGroups[0].fix"
                      @switcher="switcherState"></collapseBar>
       </div>
-      <h3>嵌套信息</h3>
+      <h3 class="cursor" data-index="0">嵌套信息</h3>
       <p>可以在 Popover 中嵌套多种类型信息，以下为嵌套表格的例子。</p>
       <div class="demo-block">
         <div class="source">
@@ -97,7 +97,7 @@
 
           <el-button v-popover:popover4>click 激活</el-button>
         </div>
-        <div class="meta">
+        <div class="meta" data-index="1">
           <div class="description"><p>利用分发取代<code>content</code>属性</p></div>
           <div class="highlight"><pre><code class="hljs language-html"><span class="hljs-tag">&lt;<span
             class="hljs-name">el-popover</span>
@@ -158,7 +158,7 @@
         <collapseBar :isExpand="switchers[1].expand" :index="1" :isFix="fixGroups[1].fix"
                      @switcher="switcherState"></collapseBar>
       </div>
-      <h3>嵌套操作</h3>
+      <h3 class="cursor" data-index="1">嵌套操作</h3>
       <p>当然，你还可以嵌套操作，这相比 Dialog 更为轻量：</p>
       <div class="demo-block">
         <div class="source">
@@ -176,7 +176,7 @@
 
           <el-button v-popover:popover5>删除</el-button>
         </div>
-        <div class="meta"><!---->
+        <div class="meta" data-index="2"><!---->
           <div class="highlight" style="width: 100%;"><pre><code class="hljs language-html"><span
             class="hljs-tag">&lt;<span class="hljs-name">el-popover</span>
   <span class="hljs-attr">ref</span>=<span class="hljs-string">"popover5"</span>
@@ -216,7 +216,7 @@
         <collapseBar :isExpand="switchers[2].expand" :index="2" :isFix="fixGroups[2].fix"
                      @switcher="switcherState"></collapseBar>
       </div>
-      <h3>Attributes</h3>
+      <h3 class="cursor" data-index="2">Attributes</h3>
       <table class="table">
         <thead>
         <tr>

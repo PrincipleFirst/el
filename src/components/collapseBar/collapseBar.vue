@@ -21,17 +21,11 @@
         default: 0
       }
     },
-    watch: {
-      isExpand (newVal) {
-        // this.initArray()
-      }
-    },
     computed: {
       _isFix () {
         if (this.isExpand === true && this.isFix === true) {
           return 'is-fixed'
         }
-        return ''
       }
     },
     methods: {

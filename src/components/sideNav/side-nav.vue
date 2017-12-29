@@ -119,7 +119,6 @@
 
   const currentHeight = document.body.clientHeight / 3 - 80
   let show = false
-  // let currentIndex = 0
 
   export default {
     data () {
@@ -159,19 +158,6 @@
         }, false)
       },
       scroll (ev) {
-        // if (ev.target.scrollTop > this.metalist[currentIndex].offsetTop) {
-        //   if (this.fixlist[currentIndex].fix === true) {
-        //     return
-        //   }
-        //   this.changeIndex(currentIndex, true)
-        // }
-        // if (ev.target.scrollTop > this.metalist[currentIndex].offsetHeight - 44) {
-        //   if (this.fixlist[currentIndex].fix === true) {
-        //     return
-        //   }
-        //   this.changeIndex(currentIndex, false)
-        //   currentIndex++
-        // }
         if (ev.target.scrollTop > currentHeight) {
           if (show === false) {
             show = true
