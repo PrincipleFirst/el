@@ -10,7 +10,7 @@
           <el-radio v-model="radio" label="1">备选项</el-radio>
           <el-radio v-model="radio" label="2">备选项</el-radio>
         </div>
-        <div class="meta">
+        <div class="meta" data-index="0">
           <div class="description"><p>要使用 Radio 组件，只需要设置<code>v-model</code>绑定变量，选中意味着变量的值为相应 Radio <code>label</code>属性的值，<code>label</code>可以是<code>String</code>、<code>Number</code>或<code>Boolean</code>。
           </p></div>
           <div class="highlight"><pre><code class="hljs language-html"><span class="hljs-tag">&lt;<span
@@ -35,9 +35,9 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[0].expand" :index="0" @switcher="switcherState"></collapseBar>
+        <collapseBar :isExpand="switchers[0].expand" :isFix="fixGroups[0].fix" :index="0" @switcher="switcherState"></collapseBar>
       </div>
-      <h3>禁用状态</h3>
+      <h3 class="cursor" data-index="0">禁用状态</h3>
       <p>单选框不可用的状态。</p>
       <div class="demo-block">
         <div class="source"><label role="radio" aria-disabled="true" tabindex="-1" class="el-radio is-disabled"><span
@@ -54,7 +54,7 @@
                                                                                                      class="el-radio__original"
                                                                                                      value="选中且禁用"></span><span
           class="el-radio__label">备选项<!----></span></label></div>
-        <div class="meta">
+        <div class="meta" data-index="1">
           <div class="description"><p>
             只要在<code>el-radio</code>元素中设置<code>disabled</code>属性即可，它接受一个<code>Boolean</code>，<code>true</code>为禁用。</p>
           </div>
@@ -82,9 +82,9 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[1].expand" :index="1" @switcher="switcherState"></collapseBar>
+        <collapseBar :isExpand="switchers[1].expand" :isFix="fixGroups[1].fix" :index="1" @switcher="switcherState"></collapseBar>
       </div>
-      <h3>单选框组</h3>
+      <h3 class="cursor" data-index="1">单选框组</h3>
       <p>适用于在多个互斥的选项中选择的场景。</p>
       <div class="demo-block">
         <div class="source">
@@ -94,7 +94,7 @@
             <el-radio :label="9">备选项</el-radio>
           </el-radio-group>
         </div>
-        <div class="meta">
+        <div class="meta" data-index="2">
           <div class="description"><p>结合<code>el-radio-group</code>元素和子元素<code>el-radio</code>可以实现单选组，在<code>el-radio-group</code>中绑定<code>v-model</code>，在<code>el-radio</code>中设置好<code>label</code>即可，无需再给每一个<code>el-radio</code>绑定变量，另外，还提供了<code>change</code>事件来响应变化，它会传入一个参数<code>value</code>。
           </p></div>
           <div class="highlight"><pre><code class="hljs language-html"><span class="hljs-tag">&lt;<span
@@ -122,9 +122,9 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[2].expand" :index="2" @switcher="switcherState"></collapseBar>
+        <collapseBar :isExpand="switchers[2].expand" :isFix="fixGroups[2].fix" :index="2" @switcher="switcherState"></collapseBar>
       </div>
-      <h3>按钮样式</h3>
+      <h3 class="cursor" data-index="2">按钮样式</h3>
       <p>按钮样式的单选组合。</p>
       <div class="demo-block">
         <div class="source">
@@ -161,7 +161,7 @@
             </el-radio-group>
           </div>
         </div>
-        <div class="meta">
+        <div class="meta" data-index="3">
           <div class="description"><p>只需要把<code>el-radio</code>元素换成<code>el-radio-button</code>元素即可，此外，
             还提供了<code>size</code>属性。</p></div>
           <div class="highlight"><pre><code class="hljs language-html"><span class="hljs-tag">&lt;<span
@@ -257,9 +257,9 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[3].expand" :index="3" @switcher="switcherState"></collapseBar>
+        <collapseBar :isExpand="switchers[3].expand" :isFix="fixGroups[3].fix" :index="3" @switcher="switcherState"></collapseBar>
       </div>
-      <h3>带有边框</h3>
+      <h3 class="cursor" data-index="3">带有边框</h3>
       <div class="demo-block">
         <div class="source">
           <div>
@@ -283,7 +283,7 @@
             </el-radio-group>
           </div>
         </div>
-        <div class="meta">
+        <div class="meta" data-index="4">
           <div class="description"><p>设置<code>border</code>属性可以渲染为带有边框的单选框。</p></div>
           <div class="highlight"><pre><code class="hljs language-html"><span class="hljs-tag">&lt;<span
             class="hljs-name">template</span>&gt;</span>
@@ -353,9 +353,9 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[4].expand" :index="4" @switcher="switcherState"></collapseBar>
+        <collapseBar :isExpand="switchers[4].expand" :isFix="fixGroups[4].fix" :index="4" @switcher="switcherState"></collapseBar>
       </div>
-      <h3>Radio Attributes</h3>
+      <h3 class="cursor" data-index="4">Radio Attributes</h3>
       <table class="table">
         <thead>
         <tr>
@@ -427,8 +427,10 @@
 
 <script type="text/ecmascript-6">
   import collapseBar from 'components/collapseBar/collapseBar'
+  import { collapseMixin } from 'common/js/mixin'
 
   export default {
+    mixins: [collapseMixin],
     data () {
       return {
         radio: '1',
@@ -452,21 +454,8 @@
           expand: false
         }, {
           expand: false
-        }]
-      }
-    },
-    mounted () {
-      this.meta = document.querySelectorAll('.meta')
-    },
-    methods: {
-      switcherState (index) {
-        if (this.switchers[index].expand === true) {
-          this.meta[index].style.height = '0'
-          this.switchers[index].expand = false
-        } else {
-          this.meta[index].style.height = 'auto'
-          this.switchers[index].expand = true
-        }
+        }],
+        fixGroups: [{fix: false}, {fix: false}, {fix: false}, {fix: false}, {fix: false}]
       }
     },
     components: {

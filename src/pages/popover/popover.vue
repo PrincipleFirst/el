@@ -371,7 +371,6 @@
 <script type="text/ecmascript-6">
   import collapseBar from 'components/collapseBar/collapseBar'
   import { collapseMixin } from 'common/js/mixin'
-  import { mapGetters } from 'vuex'
 
   export default {
     mixins: [collapseMixin],
@@ -403,16 +402,6 @@
           expand: false
         }],
         fixGroups: [{fix: false}, {fix: false}, {fix: false}]
-      }
-    },
-    computed: {
-      ...mapGetters([
-        'fixlist'
-      ])
-    },
-    watch: {
-      fixlist (newVal) {
-        this.fixGroups = newVal
       }
     },
     components: {
