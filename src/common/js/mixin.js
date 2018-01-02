@@ -1,5 +1,6 @@
 let state = 'down'
 let firstInit = 'yes'
+let isMaxLength = 'close'
 export const collapseMixin = {
   data () {
     return {
@@ -15,15 +16,22 @@ export const collapseMixin = {
   },
   watch: {
     hasInit (newVal) {
-      // console.log(newVal)
-      if (newVal.length === this.meta.length) {
-        
+      const length = this.meta.length
+      if (newVal.length === length) {
+        this.index = 'close'
+        if (newVal[length - 1] + 1 === length) {
+          isMaxLength = 'last'
+          return
+        }
+        isMaxLength = 'first'
       }
     }
   },
   methods: {
     switcherState (index) {
+      this.fixGroups[this.index].fix = false
       this.index = index
+      this.fixGroups[index].fix = true
       if (this.switchers[index].expand === true) {
         this.meta[index].style.height = '0'
         this.switchers[index].expand = false
@@ -35,7 +43,6 @@ export const collapseMixin = {
           this.observer.observe(this.cursor[index])
           firstInit = 'yes'
           this.hasInit.push(index)
-          console.log('init')
         }
       }
     },
@@ -51,21 +58,35 @@ export const collapseMixin = {
     },
     changeFix (entries) {
       const entrie = entries[0]
-      console.log(entrie)
       const currentIndex = entrie.target.getAttribute('data-index') * 1
       if (entrie.target.tagName === 'DIV') {
         if (entrie.intersectionRatio === 0) {
+          if (isMaxLength === 'first' && currentIndex > 0 && currentIndex < this.meta.length - 2) {
+            this.fixGroups[currentIndex - 1].fix = true
+            return
+          }
+          if (firstInit === 'yes') {
+            if (currentIndex > 0) {
+              this.fixGroups[currentIndex - 1].fix = true
+            }
+            if (state === 'up') {
+              this.fixGroups[currentIndex].fix = false
+            }
+            firstInit = 'no'
+            return
+          }
           this.fixGroups[currentIndex].fix = false
         } else {
           if (firstInit === 'no' && state === 'up') {
-            console.log(22)
             this.fixGroups[currentIndex].fix = false
             return
           }
           if (firstInit === 'yes') {
-            console.log(11)
-            this.fixGroups[this.index].fix = true
             firstInit = 'no'
+            if (this.index === 'close') {
+              this.fixGroups[currentIndex].fix = true
+              return
+            }
             return
           }
           if (state === 'down') {
@@ -75,18 +96,24 @@ export const collapseMixin = {
           this.fixGroups[currentIndex].fix = false
         }
       } else {
-        console.log('h3', currentIndex)
         if (entrie.intersectionRatio > 0) {
-          this.fixGroups[currentIndex].fix = false
-          console.log(11)
-        } else {
-          if (state === 'up') {
+          if (currentIndex + 1 === this.meta.length && state === 'up') {
             this.fixGroups[currentIndex].fix = true
-            console.log(22)
             return
           }
           this.fixGroups[currentIndex].fix = false
-          console.log(33)
+        } else {
+          if (state === 'up') {
+            this.fixGroups[currentIndex].fix = true
+            return
+          }
+          if (isMaxLength === 'last') {
+            if (currentIndex + 2 === this.meta.length) {
+              this.fixGroups[currentIndex + 1].fix = false
+            }
+            return
+          }
+          this.fixGroups[currentIndex].fix = false
         }
       }
     }
