@@ -115,8 +115,6 @@
 </template>
 
 <script type="text/ecmascript-6">
-  // import { mapActions, mapGetters } from 'vuex'
-
   const currentHeight = document.body.clientHeight / 3 - 80
   let show = false
 
@@ -131,17 +129,6 @@
         this.bindActiveClass()
       }, 20)
     },
-    // computed: {
-    //   ...mapGetters([
-    //     'metalist',
-    //     'fixlist'
-    //   ])
-    // },
-    // watch: {
-    //   metalist (newVal) {
-    //     // this.initArray()
-    //   }
-    // },
     methods: {
       bindActiveClass () {
         let sideNav = document.querySelector('.side-nav')
@@ -170,9 +157,6 @@
           }
         }
       }
-      // ...mapActions([
-      //   'changeIndex'
-      // ])
     }
   }
 </script>
