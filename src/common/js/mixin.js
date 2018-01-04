@@ -1,78 +1,76 @@
-let state = 'down'
-let firstInit = 'yes'
-let isMaxLength = 'close'
+let currentMeat
+let beforeScrollTop = 0
+let delta
 export const collapseMixin = {
   data () {
     return {
-      observer: new IntersectionObserver(this.changeFix),
-      index: 0,
-      currentMeat: null,
-      hasInit: []
+      fixIndex: null
     }
   },
   mounted () {
     this.meta = document.querySelectorAll('.meta')
-    this.cursor = document.querySelectorAll('.cursor')
-    this.initMousewheel()
+    this.initScroll()
   },
   watch: {
-    hasInit (newVal) {
-      const length = this.meta.length
-      if (newVal.length === length) {
-        console.log('数组达到最大')
-        this.index = 'close'
-        if (newVal[length - 1] + 1 === length) {
-          isMaxLength = 'last'
-          return
-        }
-        isMaxLength = 'first'
-      }
+    fixIndex (newVal) {
+      
     }
   },
   methods: {
     switcherState (index) {
       console.log('emit', index)
-      if (this.index !== 'close') {
-        this.fixGroups[this.index].fix = false
-      }
-      this.index = index
       if (this.switchers[index].expand === true) {
         this.meta[index].style.height = '0'
         this.switchers[index].expand = false
       } else {
         this.meta[index].style.height = 'auto'
         this.switchers[index].expand = true
-        if (!this.hasInit.includes(index)) {
-          this.observer.observe(this.meta[index])
-          firstInit = 'yes'
-          this.hasInit.push(index)
-        }
+        currentMeat = this.meta[index]
+        this.fixIndex = index
+        // const pos = currentMeat.getBoundingClientRect()
+        // const clientHeight = document.documentElement.clientHeight
+        // const fixedControl = pos.bottom > clientHeight && pos.top + 44 <= clientHeight
+        // if (this.fixGroups[index].fix === fixedControl) return
+        // this.fixGroups[index].fix = fixedControl
       }
     },
-    initMousewheel () {
-      document.getElementById('main-scrollbar').onmousewheel = function (e) {
-        if (this.currentMeat === null) return
-        if (e.wheelDelta > 0) {
-          state = 'up'
-          this.currentMeat.getBoundingClientRect()
-          // console.log()
-        }
-        if (e.wheelDelta < 0) {
-          state = 'down'
-        }
-      }
+    initScroll () {
+      const scrollParent = document.getElementById('main-scrollbar')
+      scrollParent.addEventListener('scroll', this.scrollHandler)
     },
-    changeFix (entries) {
-      const entrie = entries[0]
-      console.log(entrie)
-      const currentIndex = entrie.target.getAttribute('data-index') * 1
-      if (entrie.target.tagName === 'DIV') {
-        console.log(`DIV${currentIndex}`)
-        if (entrie.intersectionRatio > 0) {
-          console.log(`DIV出现`)
-          this.currentMeat = entrie.target
-          if (entrie.intersectionRatio < 1) {
-            this.fixGroups[currentIndex].fix = true
+    scrollHandler (e) {
+      let afterScrollTop = e.target.scrollTop
+      delta = afterScrollTop - beforeScrollTop
+      if (delta === 0) return
+      beforeScrollTop = afterScrollTop
+      console.log(currentMeat)
+      if (currentMeat === undefined) return
+      const pos = currentMeat.getBoundingClientRect()
+      const index = parseInt(currentMeat.getAttribute('data-index'))
+      this.fixIndex = index
+      const t = pos.top
+      const o = pos.bottom
+      const clientHeight = document.documentElement.clientHeight
+      const fixedControl = o > clientHeight && t + 44 <= clientHeight
+      console.log(fixedControl, index)
+      if (this.fixGroups[index].fix !== fixedControl) {
+        console.log(666)
+        this.fixGroups[index].fix = fixedControl
+      }
+      if (delta > 0) {
+        if (index + 1 < this.meta.length) {
+          const nextPos = this.meta[index + 1].getBoundingClientRect()
+          if (nextPos.top < clientHeight) {
+            currentMeat = this.meta[index + 1]
+            this.fixIndex = index + 1
+          }
+        }
+      } else {
+        if (index > 0) {
+          const prevPos = this.meta[index - 1].getBoundingClientRect()
+          if (prevPos.bottom > 0) {
+            currentMeat = this.meta[index - 1]
+            this.fixIndex = index - 1
           }
         }
       }
