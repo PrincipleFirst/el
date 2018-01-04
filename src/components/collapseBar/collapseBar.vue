@@ -1,12 +1,19 @@
 <template>
-  <div class="demo-block-control" :class="_isFix" @click="sendIndex">
+  <div class="demo-block-control" :class="_isFix" @click="sendIndex" ref="blockControl">
     <i class="el-icon-caret-bottom"
        :class="{'el-icon-caret-top':isExpand===true}"></i><span>{{isExpand === false ? '显示' : '隐藏'}}代码</span>
   </div>
 </template>
 
 <script>
+  const clientHeight = document.documentElement.clientHeight
   export default {
+    data() {
+      return {
+        fixedControl: false,
+        scrollParent: null
+      }
+    },
     props: {
       isExpand: {
         type: Boolean,
@@ -22,16 +29,51 @@
       }
     },
     computed: {
-      _isFix () {
-        if (this.isExpand === true && this.isFix === true) {
+      _isFix() {
+        if (this.fixedControl === true) {
           return 'is-fixed'
         }
       }
     },
-    methods: {
-      sendIndex () {
-        this.$emit('switcher', this.index)
+    mounted() {
+      this.meta = document.querySelectorAll('.meta')
+      this.initScroll()
+    },
+    watch: {
+      isExpand: function (newVal) {
+        console.log(newVal)
+        if (newVal === true) {
+          const pos = this.$refs.blockControl.previousElementSibling.getBoundingClientRect()
+          this.fixedControl = pos.bottom > clientHeight && pos.top + 44 <= clientHeight
+        } else {
+          this.fixedControl = false
+        }
       }
+    },
+    methods: {
+      sendIndex() {
+        // console.log(this.$refs.blockControl.parentNode)
+        this.$emit('switcher', this.index)
+      },
+      initScroll() {
+        this.scrollParent = document.getElementById('main-scrollbar')
+        this.scrollParent.addEventListener('scroll', this.scrollHandler)
+      },
+      scrollHandler() {
+        if (this.isExpand === true) {
+          const pos = this.$refs.blockControl.previousElementSibling.getBoundingClientRect()
+          const fixed = pos.bottom > clientHeight && pos.top + 44 <= clientHeight
+          if (this.fixedControl !== fixed) {
+            this.fixedControl = fixed
+          }
+        }
+      },
+      removeScrollHandler() {
+        this.scrollParent && this.scrollParent.removeEventListener('scroll', this.scrollHandler)
+      }
+    },
+    beforeDestroy() {
+      this.removeScrollHandler()
     }
   }
 </script>
