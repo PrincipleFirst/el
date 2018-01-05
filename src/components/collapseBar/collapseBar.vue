@@ -17,7 +17,6 @@
     },
     watch: {
       isExpanded: function (newVal) {
-        console.log(newVal)
         const meta = this.$refs.blockControl.previousElementSibling
         if (newVal === true) {
           const pos = meta.getBoundingClientRect()

@@ -3,6 +3,11 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
+const Home = (resolve) => {
+  import('pages/home/home').then((module) => {
+    resolve(module)
+  })
+}
 const Components = (resolve) => {
   import('pages/components/components').then((module) => {
     resolve(module)
@@ -229,6 +234,10 @@ const routes = [
   {
     path: '/',
     redirect: '/component'
+  },
+  {
+    path: '/home',
+    component: Home
   },
   {
     path: '/component',
