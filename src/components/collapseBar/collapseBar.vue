@@ -15,23 +15,6 @@
         scrollParent: null
       }
     },
-    props: {
-      isExpand: {
-        type: Boolean,
-        default: false
-      },
-      isFix: {
-        type: Boolean,
-        default: false
-      },
-      index: {
-        type: Number,
-        default: 0
-      }
-    },
-    mounted () {
-      this.initScroll()
-    },
     watch: {
       isExpanded: function (newVal) {
         console.log(newVal)
@@ -39,8 +22,13 @@
         if (newVal === true) {
           const pos = meta.getBoundingClientRect()
           this.fixedControl = pos.bottom > clientHeight && pos.top + 44 <= clientHeight
+          setTimeout(() => {
+            this.scrollParent = document.getElementById('main-scrollbar')
+            this.scrollParent.addEventListener('scroll', this.scrollHandler)
+          }, 200)
         } else {
           this.fixedControl = false
+          this.removeScrollHandler()
         }
       }
     },
@@ -54,10 +42,6 @@
           meta.style.height = '0'
         }
         this.$emit('switcher', this.index)
-      },
-      initScroll () {
-        this.scrollParent = document.getElementById('main-scrollbar')
-        this.scrollParent.addEventListener('scroll', this.scrollHandler)
       },
       scrollHandler () {
         if (this.isExpanded === true) {
