@@ -47,7 +47,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[0].expand" :index="0" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>不同状态</h3>
       <p>用来显示「成功、警告、消息、错误」类的操作反馈。</p>
@@ -108,7 +108,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[1].expand" :index="1" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>可关闭</h3>
       <p>可以添加关闭按钮。</p>
@@ -177,7 +177,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[2].expand" :index="2" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>文字居中</h3>
       <p>使用 center 属性让文字水平居中。</p>
@@ -209,7 +209,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[3].expand" :index="3" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>使用 HTML 片段</h3>
       <p>message 属性支持传入 HTML 片段</p>
@@ -242,7 +242,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[4].expand" :index="4" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <div class="warning"><p><code>message</code> 属性虽然支持传入 HTML 片段，但是在网站上动态渲染任意 HTML 是非常危险的，因为容易导致 <a
         href="https://en.wikipedia.org/wiki/Cross-site_scripting">XSS 攻击</a>。因此在 <code>dangerouslyUseHTMLString</code>
@@ -258,25 +258,8 @@
 
 <script type="text/ecmascript-6">
   import collapseBar from 'components/collapseBar/collapseBar'
-  import { collapseMixin } from 'common/js/mixin'
 
   export default {
-    mixins: [collapseMixin],
-    data () {
-      return {
-        switchers: [{
-          expand: false
-        }, {
-          expand: false
-        }, {
-          expand: false
-        }, {
-          expand: false
-        }, {
-          expand: false
-        }]
-      }
-    },
     methods: {
       openVn () {
         const h = this.$createElement
@@ -287,36 +270,30 @@
           ])
         })
       },
-
       open () {
         this.$message('这是一条消息提示')
       },
-
       open2 () {
         this.$message({
           message: '恭喜你，这是一条成功消息',
           type: 'success'
         })
       },
-
       open3 () {
         this.$message({
           message: '警告哦，这是一条警告消息',
           type: 'warning'
         })
       },
-
       open4 () {
         this.$message.error('错了哦，这是一条错误消息')
       },
-
       open5 () {
         this.$message({
           showClose: true,
           message: '这是一条消息提示'
         })
       },
-
       open6 () {
         this.$message({
           showClose: true,
@@ -324,7 +301,6 @@
           type: 'success'
         })
       },
-
       open7 () {
         this.$message({
           showClose: true,
@@ -332,7 +308,6 @@
           type: 'warning'
         })
       },
-
       open8 () {
         this.$message({
           showClose: true,

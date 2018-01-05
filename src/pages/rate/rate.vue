@@ -54,7 +54,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[0].expand" :index="0" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>辅助文字</h3>
       <p>用辅助文字直接地表达对应分数</p>
@@ -86,7 +86,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[1].expand" :index="1" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>其它 icon</h3>
       <p>当有多层评价时，可以用不同类型的 icon 区分评分层级</p>
@@ -122,7 +122,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[2].expand" :index="2" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>只读</h3>
       <p>只读的评分用来展示分数，允许出现半星</p>
@@ -176,7 +176,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[3].expand" :index="3" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>Attributes</h3>
       <table class="table">
@@ -335,30 +335,7 @@
         value2: null,
         value3: null,
         value4: null,
-        value5: 3.7,
-        switchers: [{
-          expand: false
-        }, {
-          expand: false
-        }, {
-          expand: false
-        }, {
-          expand: false
-        }]
-      }
-    },
-    mounted () {
-      this.meta = document.querySelectorAll('.meta')
-    },
-    methods: {
-      switcherState (index) {
-        if (this.switchers[index].expand === true) {
-          this.meta[index].style.height = '0'
-          this.switchers[index].expand = false
-        } else {
-          this.meta[index].style.height = 'auto'
-          this.switchers[index].expand = true
-        }
+        value5: 3.7
       }
     },
     components: {

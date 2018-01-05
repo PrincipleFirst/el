@@ -265,7 +265,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[0].expand" :index="0" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>禁用选项</h3>
       <div class="demo-block">
@@ -489,7 +489,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[1].expand" :index="1" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>仅显示最后一级</h3>
       <p>可以仅在输入框中显示选中项最后一级的标签，而不是选中项所在的完整路径。</p>
@@ -714,7 +714,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[2].expand" :index="2" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>默认值</h3>
       <div class="demo-block">
@@ -939,7 +939,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[3].expand" :index="3" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>选择即改变</h3>
       <p>点击或移入选项即表示选中该项，可用于选择任意一级菜单的选项。</p>
@@ -1163,7 +1163,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[4].expand" :index="4" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>动态加载次级选项</h3>
       <p>当选中某一级时，动态加载该级下的选项。</p>
@@ -1228,7 +1228,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[5].expand" :index="5" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>可搜索</h3>
       <p>可以快捷地搜索选项并选择。</p>
@@ -1484,7 +1484,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[6].expand" :index="6" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>Attributes</h3>
       <table class="table"><thead><tr><th>参数</th><th>说明</th><th>类型</th><th>可选值</th><th>默认值</th></tr></thead><tbody><tr><td>options</td><td>可选项数据源，键名可通过 <code>props</code> 属性配置</td><td>array</td><td>—</td><td>—</td></tr><tr><td>props</td><td>配置选项，具体见下表</td><td>object</td><td>—</td><td>—</td></tr><tr><td>value</td><td>选中项绑定值</td><td>array</td><td>—</td><td>—</td></tr><tr><td>separator</td><td>选项分隔符</td><td>string</td><td>—</td><td>斜杠'/'</td></tr><tr><td>popper-class</td><td>自定义浮层类名</td><td>string</td><td>—</td><td>—</td></tr><tr><td>placeholder</td><td>输入框占位文本</td><td>string</td><td>—</td><td>请选择</td></tr><tr><td>disabled</td><td>是否禁用</td><td>boolean</td><td>—</td><td>false</td></tr><tr><td>clearable</td><td>是否支持清空选项</td><td>boolean</td><td>—</td><td>false</td></tr><tr><td>expand-trigger</td><td>次级菜单的展开方式</td><td>string</td><td>click / hover</td><td>click</td></tr><tr><td>show-all-levels</td><td>输入框中是否显示选中值的完整路径</td><td>boolean</td><td>—</td><td>true</td></tr><tr><td>filterable</td><td>是否可搜索选项</td><td>boolean</td><td>—</td><td>—</td></tr><tr><td>debounce</td><td>搜索关键词输入的去抖延迟，毫秒</td><td>number</td><td>—</td><td>300</td></tr><tr><td>change-on-select</td><td>是否允许选择任意一级的选项</td><td>boolean</td><td>—</td><td>false</td></tr><tr><td>size</td><td>尺寸</td><td>string</td><td>medium / small / mini</td><td>—</td></tr><tr><td>before-filter</td><td>筛选之前的钩子，参数为输入的值，若返回 false 或者返回 Promise 且被 reject，则停止筛选</td><td>function(value)</td><td>—</td><td>—</td></tr></tbody></table>
@@ -1906,37 +1906,11 @@
         props: {
           value: 'label',
           children: 'cities'
-        },
-        switchers: [{
-          expand: false
-        }, {
-          expand: false
-        }, {
-          expand: false
-        }, {
-          expand: false
-        }, {
-          expand: false
-        }, {
-          expand: false
-        }, {
-          expand: false
-        }]
+        }
       }
     },
-    mounted () {
-      this.meta = document.querySelectorAll('.meta')
-    },
+
     methods: {
-      switcherState (index) {
-        if (this.switchers[index].expand === true) {
-          this.meta[index].style.height = '0'
-          this.switchers[index].expand = false
-        } else {
-          this.meta[index].style.height = 'auto'
-          this.switchers[index].expand = true
-        }
-      },
       handleChange (value) {
         console.log(value)
       },

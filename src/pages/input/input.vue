@@ -26,7 +26,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[0].expand" :index="0" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>禁用状态</h3>
       <div class="demo-block">
@@ -58,7 +58,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[1].expand" :index="1" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>可清空</h3>
       <div class="demo-block">
@@ -90,7 +90,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[2].expand" :index="2" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>复合型输入框</h3>
       <p>可前置或后置元素，一般为标签或按钮</p>
@@ -184,7 +184,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[3].expand" :index="3" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>带输入建议</h3>
       <p>根据输入内容提供对应的输入建议</p>
@@ -385,7 +385,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[4].expand" :index="4" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>自定义模板</h3>
       <p>可自定义输入建议的显示</p>
@@ -596,7 +596,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[5].expand" :index="5" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>远程搜索</h3>
       <p>从服务端搜索数据</p>
@@ -759,7 +759,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[6].expand" :index="6" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>Input Attributes</h3>
       <table class="table">
@@ -1179,38 +1179,13 @@
         state2: '',
         state3: '',
         state4: '',
-        timeout: null,
-        switchers: [{
-          expand: false
-        }, {
-          expand: false
-        }, {
-          expand: false
-        }, {
-          expand: false
-        }, {
-          expand: false
-        }, {
-          expand: false
-        }, {
-          expand: false
-        }]
+        timeout: null
       }
     },
     mounted () {
-      this.meta = document.querySelectorAll('.meta')
       this.restaurants = this.loadAll()
     },
     methods: {
-      switcherState (index) {
-        if (this.switchers[index].expand === true) {
-          this.meta[index].style.height = '0'
-          this.switchers[index].expand = false
-        } else {
-          this.meta[index].style.height = 'auto'
-          this.switchers[index].expand = true
-        }
-      },
       querySearch (queryString, cb) {
         let restaurants = this.restaurants
         let results = queryString ? restaurants.filter(this.createFilter(queryString)) : restaurants

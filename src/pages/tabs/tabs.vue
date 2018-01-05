@@ -51,7 +51,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[0].expand" :index="0" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>选项卡样式</h3>
       <p>选项卡样式的标签页。</p>
@@ -102,7 +102,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[1].expand" :index="1" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>卡片化</h3>
       <p>卡片化的标签页。</p>
@@ -136,7 +136,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[2].expand" :index="2" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>位置</h3>
       <p>可以通过 <code>tab-position</code> 设置标签的位置</p>
@@ -200,7 +200,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[3].expand" :index="3" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>自定义标签页</h3>
       <p>可以通过具名 <code>slot</code> 来实现自定义标签页的内容</p>
@@ -241,7 +241,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[4].expand" :index="4" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>动态增减标签页</h3>
       <p>增减标签页按钮只能在选项卡样式的标签页下使用</p>
@@ -328,7 +328,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[5].expand" :index="5" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>自定义增加标签页触发器</h3>
       <div class="demo-block">
@@ -429,7 +429,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[6].expand" :index="6" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>Tabs Attributes</h3>
       <table class="table"><thead><tr><th>参数</th><th>说明</th><th>类型</th><th>可选值</th><th>默认值</th></tr></thead><tbody><tr><td>type</td><td>风格类型</td><td>string</td><td>card/border-card</td><td>—</td></tr><tr><td>closable</td><td>标签是否可关闭</td><td>boolean</td><td>—</td><td>false</td></tr><tr><td>addable</td><td>标签是否可增加</td><td>boolean</td><td>—</td><td>false</td></tr><tr><td>editable</td><td>标签是否同时可增加和关闭</td><td>boolean</td><td>—</td><td>false</td></tr><tr><td>value</td><td>绑定值，选中选项卡的 name</td><td>string</td><td>—</td><td>第一个选项卡的 name</td></tr><tr><td>tab-position</td><td>选项卡所在位置</td><td>string</td><td>top/right/bottom/left</td><td>top</td></tr></tbody></table>
@@ -443,10 +443,8 @@
 
 <script type="text/ecmascript-6">
   import collapseBar from 'components/collapseBar/collapseBar'
-  import { collapseMixin } from 'common/js/mixin'
 
   export default {
-    mixins: [collapseMixin],
     data () {
       return {
         activeName: 'second',
@@ -473,22 +471,7 @@
           name: '2',
           content: 'Tab 2 content'
         }],
-        item: '',
-        switchers: [{
-          expand: false
-        }, {
-          expand: false
-        }, {
-          expand: false
-        }, {
-          expand: false
-        }, {
-          expand: false
-        }, {
-          expand: false
-        }, {
-          expand: false
-        }]
+        item: ''
       }
     },
     methods: {

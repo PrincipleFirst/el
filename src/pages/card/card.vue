@@ -78,7 +78,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[0].expand" :index="0" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>简单卡片</h3>
       <p>卡片可以只有内容区域。</p>
@@ -118,7 +118,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[1].expand" :index="1" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>带图片</h3>
       <p>可配置定义更丰富的内容展示。</p>
@@ -216,7 +216,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[2].expand" :index="2" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>Attributes</h3>
       <table class="table">
@@ -252,23 +252,12 @@
 
 <script type="text/ecmascript-6">
   import collapseBar from 'components/collapseBar/collapseBar'
-  import { collapseMixin } from 'common/js/mixin'
 
   export default {
-    mixins: [collapseMixin],
     data () {
       return {
         o: null,
-        currentDate: new Date(),
-        switchers: [{
-          expand: false
-        }, {
-          expand: false
-        }, {
-          expand: false
-        }, {
-          expand: false
-        }]
+        currentDate: new Date()
       }
     },
     components: {

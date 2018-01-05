@@ -59,7 +59,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[0].expand" :index="0" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>有禁用选项</h3>
       <div class="demo-block">
@@ -120,7 +120,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[1].expand" :index="1" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>可清空单选</h3>
       <p>包含清空按钮，可将选择器清空为初始状态</p>
@@ -180,7 +180,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[2].expand" :index="2" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>基础多选</h3>
       <p>适用性较广的基础多选，用 Tag 展示已选项</p>
@@ -269,7 +269,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[3].expand" :index="3" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>自定义模板</h3>
       <p>可以自定义备选项</p>
@@ -339,7 +339,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[4].expand" :index="4" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>分组</h3>
       <p>备选项进行分组展示</p>
@@ -417,7 +417,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[5].expand" :index="5" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>可搜索</h3>
       <p>可以利用搜索功能快速查找选项</p>
@@ -478,7 +478,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[6].expand" :index="6" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>远程搜索</h3>
       <p>从服务器搜索数据，输入关键字进行查找</p>
@@ -593,7 +593,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[7].expand" :index="7" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>创建条目</h3>
       <p>可以创建并选中选项中不存在的条目</p>
@@ -705,7 +705,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[8].expand" :index="8" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>Select Attributes</h3>
       <table class="table">
@@ -1117,44 +1117,15 @@
           value: 'JavaScript',
           label: 'JavaScript'
         }],
-        value10: [],
-        switchers: [{
-          expand: false
-        }, {
-          expand: false
-        }, {
-          expand: false
-        }, {
-          expand: false
-        }, {
-          expand: false
-        }, {
-          expand: false
-        }, {
-          expand: false
-        }, {
-          expand: false
-        }, {
-          expand: false
-        }]
+        value10: []
       }
     },
     mounted () {
-      this.meta = document.querySelectorAll('.meta')
       this.list = this.states.map(item => {
         return {value: item, label: item}
       })
     },
     methods: {
-      switcherState (index) {
-        if (this.switchers[index].expand === true) {
-          this.meta[index].style.height = '0'
-          this.switchers[index].expand = false
-        } else {
-          this.meta[index].style.height = 'auto'
-          this.switchers[index].expand = true
-        }
-      },
       remoteMethod (query) {
         if (query !== '') {
           this.loading = true

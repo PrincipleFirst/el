@@ -39,7 +39,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[0].expand" :index="0" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>任意时间点</h3>
       <p>可以选择任意时间</p>
@@ -98,7 +98,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[1].expand" :index="1" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>固定时间范围</h3>
       <p>若先选择开始时间，则结束时间内备选项的状态会随之改变</p>
@@ -152,7 +152,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[2].expand" :index="2" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>任意时间范围</h3>
       <p>可选择任意的时间范围</p>
@@ -224,7 +224,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[3].expand" :index="3" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>Attributes</h3>
       <table class="table"><thead><tr><th>参数</th><th>说明</th><th>类型</th><th>可选值</th><th>默认值</th></tr></thead><tbody><tr><td>readonly</td><td>完全只读</td><td>boolean</td><td>—</td><td>false</td></tr><tr><td>disabled</td><td>禁用</td><td>boolean</td><td>—</td><td>false</td></tr><tr><td>editable</td><td>文本框可输入</td><td>boolean</td><td>—</td><td>true</td></tr><tr><td>clearable</td><td>是否显示清除按钮</td><td>boolean</td><td>—</td><td>true</td></tr><tr><td>size</td><td>输入框尺寸</td><td>string</td><td>medium / small / mini</td><td>—</td></tr><tr><td>placeholder</td><td>非范围选择时的占位内容</td><td>string</td><td>—</td><td>—</td></tr><tr><td>start-placeholder</td><td>范围选择时开始日期的占位内容</td><td>string</td><td>—</td><td>—</td></tr><tr><td>end-placeholder</td><td>范围选择时开始日期的占位内容</td><td>string</td><td>—</td><td>—</td></tr><tr><td>is-range</td><td>是否为时间范围选择，仅对<code>&lt;el-time-picker&gt;</code>有效</td><td>boolean</td><td>—</td><td>false</td></tr><tr><td>arrow-control</td><td>是否使用箭头进行时间选择，仅对<code>&lt;el-time-picker&gt;</code>有效</td><td>boolean</td><td>—</td><td>false</td></tr><tr><td>value</td><td>绑定值</td><td>date(TimePicker) / string(TimeSelect)</td><td>—</td><td>—</td></tr><tr><td>align</td><td>对齐方式</td><td>string</td><td>left / center / right</td><td>left</td></tr><tr><td>popper-class</td><td>TimePicker 下拉框的类名</td><td>string</td><td>—</td><td>—</td></tr><tr><td>picker-options</td><td>当前时间日期选择器特有的选项参考下表</td><td>object</td><td>—</td><td>{}</td></tr><tr><td>range-separator</td><td>选择范围时的分隔符</td><td>string</td><td>-</td><td>'-'</td></tr><tr><td>value-format</td><td>可选，仅TimePicker时可用，绑定值的格式，同DatePicker</td><td>string</td><td>小时 <code>HH</code>，分 <code>mm</code>，秒 <code>ss</code>，AM/PM <code>A</code></td><td>—</td></tr><tr><td>default-value</td><td>可选，选择器打开时默认显示的时间</td><td>Date(TimePicker) / string(TimeSelect)</td><td>可被<code>new Date()</code>解析(TimePicker) / 可选值(TimeSelect)</td><td>—</td></tr><tr><td>name</td><td>原生属性</td><td>string</td><td>—</td><td>—</td></tr></tbody></table>
@@ -252,30 +252,7 @@
         startTime: '',
         endTime: '',
         value4: [new Date(2016, 9, 10, 8, 40), new Date(2016, 9, 10, 9, 40)],
-        value5: [new Date(2016, 9, 10, 8, 40), new Date(2016, 9, 10, 9, 40)],
-        switchers: [{
-          expand: false
-        }, {
-          expand: false
-        }, {
-          expand: false
-        }, {
-          expand: false
-        }]
-      }
-    },
-    mounted () {
-      this.meta = document.querySelectorAll('.meta')
-    },
-    methods: {
-      switcherState (index) {
-        if (this.switchers[index].expand === true) {
-          this.meta[index].style.height = '0'
-          this.switchers[index].expand = false
-        } else {
-          this.meta[index].style.height = 'auto'
-          this.switchers[index].expand = true
-        }
+        value5: [new Date(2016, 9, 10, 8, 40), new Date(2016, 9, 10, 9, 40)]
       }
     },
     components: {

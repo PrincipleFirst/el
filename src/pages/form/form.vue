@@ -184,7 +184,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[0].expand" :index="0" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <div class="tip"><p>W3C 标准中有如下<a href="https://www.w3.org/MarkUp/html-spec/html-spec_8.html#SEC8.2">规定</a>：</p>
         <blockquote><p><i>When there is only one single-line text input field in a form, the user agent should accept
@@ -263,7 +263,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[1].expand" :index="1" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>对齐方式</h3>
       <p>根据具体目标和制约因素，选择最佳的标签对齐方式。</p>
@@ -342,7 +342,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[2].expand" :index="2" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>表单验证</h3>
       <p>在防止用户犯错的前提下，尽可能让用户更早地发现并纠正错误。</p>
@@ -584,7 +584,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[3].expand" :index="3" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>自定义校验规则</h3>
       <p>这个例子中展示了如何使用自定义验证规则来完成密码的二次验证。</p>
@@ -736,7 +736,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[4].expand" :index="4" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>动态增减表单项</h3>
       <div class="demo-block">
@@ -864,7 +864,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[5].expand" :index="5" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>数字类型验证</h3>
       <div class="demo-block">
@@ -945,7 +945,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[6].expand" :index="6" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <div class="tip"><p>嵌套在 <code>el-form-item</code> 中的 <code>el-form-item</code> 标签宽度默认为零，不会继承 <code>el-form</code>
         的 <code>label-width</code>。如果需要可以为其单独设置 <code>label-width</code> 属性。</p></div>
@@ -1108,7 +1108,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[7].expand" :index="7" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>Form Attributes</h3>
       <table class="table">
@@ -1345,10 +1345,8 @@
 
 <script type="text/ecmascript-6">
   import collapseBar from 'components/collapseBar/collapseBar'
-  import { collapseMixin } from 'common/js/mixin'
 
   export default {
-    mixins: [collapseMixin],
     data () {
       var checkAge = (rule, value, callback) => {
         if (!value) {
@@ -1474,24 +1472,7 @@
           type: [],
           resource: '',
           desc: ''
-        },
-        switchers: [{
-          expand: false
-        }, {
-          expand: false
-        }, {
-          expand: false
-        }, {
-          expand: false
-        }, {
-          expand: false
-        }, {
-          expand: false
-        }, {
-          expand: false
-        }, {
-          expand: false
-        }]
+        }
       }
     },
     methods: {

@@ -21,7 +21,7 @@
   <span class="hljs-tag">&lt;<span class="hljs-name">el-breadcrumb-item</span>&gt;</span>活动详情<span class="hljs-tag">&lt;/<span class="hljs-name">el-breadcrumb-item</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">el-breadcrumb</span>&gt;</span>
 </code></pre></div></div>
-        <collapseBar :isExpand="switchers[0].expand" :index="0" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>图标分隔符</h3>
       <p>选项卡样式的标签页。</p>
@@ -41,7 +41,7 @@
   <span class="hljs-tag">&lt;<span class="hljs-name">el-breadcrumb-item</span>&gt;</span>活动详情<span class="hljs-tag">&lt;/<span class="hljs-name">el-breadcrumb-item</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">el-breadcrumb</span>&gt;</span>
 </code></pre></div></div>
-        <collapseBar :isExpand="switchers[1].expand" :index="1" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>Breadcrumb Attributes</h3>
       <table class="table"><thead><tr><th>参数</th><th>说明</th><th>类型</th><th>可选值</th><th>默认值</th></tr></thead><tbody><tr><td>separator</td><td>分隔符</td><td>string</td><td>—</td><td>斜杠'/'</td></tr><tr><td>separator-class</td><td>图标分隔符 class</td><td>string</td><td>—</td><td>-</td></tr></tbody></table>
@@ -53,22 +53,8 @@
 
 <script type="text/ecmascript-6">
   import collapseBar from 'components/collapseBar/collapseBar'
-  import { collapseMixin } from 'common/js/mixin'
 
   export default {
-    mixins: [collapseMixin],
-    data () {
-      return {
-        switchers: [{
-          expand: false
-        }, {
-          expand: false
-        }]
-      }
-    },
-    methods: {
-
-    },
     components: {
       collapseBar
     }

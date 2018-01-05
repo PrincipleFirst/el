@@ -67,7 +67,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[0].expand" :index="0" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>用户头像上传</h3>
       <p>使用 before-upload 限制用户上传的图片格式和大小。</p>
@@ -156,7 +156,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[1].expand" :index="1" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>照片墙</h3>
       <p>使用 list-type 属性来设置文件列表的样式。</p>
@@ -211,7 +211,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[2].expand" :index="2" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>图片列表缩略图</h3>
       <div class="demo-block">
@@ -267,7 +267,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[3].expand" :index="3" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>上传文件列表控制</h3>
       <p>通过 on-change 钩子函数来对列表进行控制</p>
@@ -322,7 +322,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[4].expand" :index="4" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>拖拽上传</h3>
       <div class="demo-block">
@@ -358,7 +358,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[5].expand" :index="5" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>手动上传</h3>
       <div class="demo-block">
@@ -425,7 +425,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[5].expand" :index="5" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>Attributes</h3>
       <table class="table">
@@ -661,37 +661,10 @@
         }],
         imageUrl: '',
         dialogImageUrl: '',
-        dialogVisible: false,
-        switchers: [{
-          expand: false
-        }, {
-          expand: false
-        }, {
-          expand: false
-        }, {
-          expand: false
-        }, {
-          expand: false
-        }, {
-          expand: false
-        }, {
-          expand: false
-        }]
+        dialogVisible: false
       }
     },
-    mounted () {
-      this.meta = document.querySelectorAll('.meta')
-    },
     methods: {
-      switcherState (index) {
-        if (this.switchers[index].expand === true) {
-          this.meta[index].style.height = '0'
-          this.switchers[index].expand = false
-        } else {
-          this.meta[index].style.height = 'auto'
-          this.switchers[index].expand = true
-        }
-      },
       handleRemove (file, fileList) {
         console.log(file, fileList)
       },

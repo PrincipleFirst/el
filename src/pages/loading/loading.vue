@@ -85,7 +85,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[0].expand" :index="0" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>自定义</h3>
       <p>可自定义加载文案、图标和背景色。 </p>
@@ -168,7 +168,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[1].expand" :index="1" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>整页加载</h3>
       <p>页面数据加载时显示。</p>
@@ -236,7 +236,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[2].expand" :index="2" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>服务</h3>
       <p>Loading 还可以以服务的方式调用。</p>
@@ -263,10 +263,9 @@
 
 <script type="text/ecmascript-6">
   import collapseBar from 'components/collapseBar/collapseBar'
-  import { collapseMixin } from 'common/js/mixin'
 
   export default {
-    mixins: [collapseMixin],
+
     data () {
       return {
         tableData: [{
@@ -284,14 +283,7 @@
         }],
         loading: true,
         loading2: true,
-        fullscreenLoading: false,
-        switchers: [{
-          expand: false
-        }, {
-          expand: false
-        }, {
-          expand: false
-        }]
+        fullscreenLoading: false
       }
     },
     methods: {

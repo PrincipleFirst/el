@@ -97,7 +97,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[0].expand" :index="0" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>离散值</h3>
       <p>选项可以是离散的</p>
@@ -148,7 +148,7 @@
   }
 </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 </code></pre></div></div>
-        <collapseBar :isExpand="switchers[1].expand" :index="1" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>带有输入框</h3>
       <p>通过输入框设置精确数值</p>
@@ -180,7 +180,7 @@
   }
 </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 </code></pre></div></div>
-        <collapseBar :isExpand="switchers[2].expand" :index="2" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>范围选择</h3>
       <p>支持选择某一数值范围</p>
@@ -216,7 +216,7 @@
   }
 </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 </code></pre></div></div>
-        <collapseBar :isExpand="switchers[3].expand" :index="3" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>竖向模式</h3>
       <div class="demo-block">
@@ -249,7 +249,7 @@
   }
 </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 </code></pre></div></div>
-        <collapseBar :isExpand="switchers[4].expand" :index="4" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>Attributes</h3>
       <table class="table"><thead><tr><th>参数</th><th>说明</th><th>类型</th><th>可选值</th><th>默认值</th></tr></thead><tbody><tr><td>min</td><td>最小值</td><td>number</td><td>—</td><td>0</td></tr><tr><td>max</td><td>最大值</td><td>number</td><td>—</td><td>100</td></tr><tr><td>disabled</td><td>是否禁用</td><td>boolean</td><td>—</td><td>false</td></tr><tr><td>step</td><td>步长</td><td>number</td><td>—</td><td>1</td></tr><tr><td>show-input</td><td>是否显示输入框，仅在非范围选择时有效</td><td>boolean</td><td>—</td><td>false</td></tr><tr><td>show-input-controls</td><td>在显示输入框的情况下，是否显示输入框的控制按钮</td><td>boolean</td><td>—</td><td>true</td></tr><tr><td>show-stops</td><td>是否显示间断点</td><td>boolean</td><td>—</td><td>false</td></tr><tr><td>show-tooltip</td><td>是否显示 tooltip</td><td>boolean</td><td>—</td><td>true</td></tr><tr><td>format-tooltip</td><td>格式化 tooltip message</td><td>function(value)</td><td>—</td><td>—</td></tr><tr><td>range</td><td>是否为范围选择</td><td>boolean</td><td>—</td><td>false</td></tr><tr><td>vertical</td><td>是否竖向模式</td><td>boolean</td><td>—</td><td>false</td></tr><tr><td>height</td><td>Slider 高度，竖向模式时必填</td><td>string</td><td>—</td><td>—</td></tr><tr><td>label</td><td>屏幕阅读器标签</td><td>string</td><td>—</td><td>—</td></tr><tr><td>debounce</td><td>输入时的去抖延迟，毫秒，仅在<code>show-input</code>等于true时有效</td><td>number</td><td>—</td><td>300</td></tr></tbody></table>
@@ -274,33 +274,10 @@
         value7: 0,
         value8: 0,
         value9: [4, 8],
-        value10: 0,
-        switchers: [{
-          expand: false
-        }, {
-          expand: false
-        }, {
-          expand: false
-        }, {
-          expand: false
-        }, {
-          expand: false
-        }]
+        value10: 0
       }
     },
-    mounted () {
-      this.meta = document.querySelectorAll('.meta')
-    },
     methods: {
-      switcherState (index) {
-        if (this.switchers[index].expand === true) {
-          this.meta[index].style.height = '0'
-          this.switchers[index].expand = false
-        } else {
-          this.meta[index].style.height = 'auto'
-          this.switchers[index].expand = true
-        }
-      },
       formatTooltip(val) {
         return val / 100
       }

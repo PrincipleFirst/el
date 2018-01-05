@@ -190,7 +190,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[0].expand" :index="0" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>分栏间隔</h3>
       <p>分栏之间存在间隔。</p>
@@ -268,7 +268,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[1].expand" :index="1" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>混合布局</h3>
       <p>通过基础的 1/24 分栏任意扩展组合形成较为复杂的混合布局。</p>
@@ -396,7 +396,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[2].expand" :index="2" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>对齐方式</h3>
       <p>通过 <code>flex</code> 布局来对分栏进行灵活的对齐。</p>
@@ -588,7 +588,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[3].expand" :index="3" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>响应式布局</h3>
       <p>参照了 Bootstrap 的 响应式设计，预设了五个响应尺寸：<code>xs</code>、<code>sm</code>、<code>md</code>、<code>lg</code> 和 <code>xl</code>。</p>
@@ -627,7 +627,7 @@
   }
 </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
 </code></pre></div></div>
-        <collapseBar :isExpand="switchers[4].expand" :index="4" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>Row Attributes</h3>
       <table class="table"><thead><tr><th>参数</th><th>说明</th><th>类型</th><th>可选值</th><th>默认值</th></tr></thead><tbody><tr><td>gutter</td><td>栅格间隔</td><td>number</td><td>—</td><td>0</td></tr><tr><td>type</td><td>布局模式，可选 flex，现代浏览器下有效</td><td>string</td><td>—</td><td>—</td></tr><tr><td>justify</td><td>flex 布局下的水平排列方式</td><td>string</td><td>start/end/center/space-around/space-between</td><td>start</td></tr><tr><td>align</td><td>flex 布局下的垂直排列方式</td><td>string</td><td>top/middle/bottom</td><td>top</td></tr><tr><td>tag</td><td>自定义元素标签</td><td>string</td><td>*</td><td>div</td></tr></tbody></table>
@@ -639,25 +639,8 @@
 
 <script type="text/ecmascript-6">
   import collapseBar from 'components/collapseBar/collapseBar'
-  import { collapseMixin } from 'common/js/mixin'
 
   export default {
-    mixins: [collapseMixin],
-    data () {
-      return {
-        switchers: [{
-          expand: false
-        }, {
-          expand: false
-        }, {
-          expand: false
-        }, {
-          expand: false
-        }, {
-          expand: false
-        }]
-      }
-    },
     components: {
       collapseBar
     }

@@ -100,7 +100,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[0].expand" :index="0" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>禁用状态</h3>
       <p>按钮不可用状态。</p>
@@ -170,7 +170,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[1].expand" :index="1" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>文字按钮</h3>
       <p>没有边框和背景色的按钮。</p>
@@ -189,7 +189,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[2].expand" :index="2" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>图标按钮</h3>
       <p>带图标的按钮可增强辨识度（有文字）或节省空间（无文字）。</p>
@@ -228,7 +228,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[3].expand" :index="3" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>按钮组</h3>
       <p>以按钮组的方式出现，常用于多项类似操作。</p>
@@ -280,7 +280,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[4].expand" :index="4" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>加载中</h3>
       <p>点击按钮后进行数据加载操作，在按钮上显示加载状态。</p>
@@ -297,7 +297,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[5].expand" :index="5" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>不同尺寸</h3>
       <p>Button 组件提供除了默认值以外的三种尺寸，可以在不同场景下选择合适的按钮尺寸。</p>
@@ -355,7 +355,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[6].expand" :index="6" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>Attributes</h3>
       <table class="table">
@@ -444,26 +444,10 @@
   export default {
     data () {
       return {
-        switchers: [{
-          expand: false
-        }, {
-          expand: false
-        }, {
-          expand: false
-        }, {
-          expand: false
-        }, {
-          expand: false
-        }, {
-          expand: false
-        }, {
-          expand: false
-        }]
+
       }
     },
-    mounted () {
-      this.meta = document.querySelectorAll('.meta')
-    },
+
     methods: {
       switcherState (index) {
         if (this.switchers[index].expand === true) {

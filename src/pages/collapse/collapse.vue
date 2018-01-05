@@ -56,7 +56,7 @@
   }
 </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 </code></pre></div></div>
-        <collapseBar :isExpand="switchers[0].expand" :index="0" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>手风琴效果</h3>
       <p>每次只能展开一个面板</p>
@@ -111,7 +111,7 @@
   }
 </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 </code></pre></div></div>
-        <collapseBar :isExpand="switchers[1].expand" :index="1" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>自定义面板标题</h3>
       <p>除了可以通过 <code>title</code> 属性以外，还可以通过具名 <code>slot</code> 来实现自定义面板的标题内容，以实现增加图标等效果。</p>
@@ -163,7 +163,7 @@
   <span class="hljs-tag">&lt;/<span class="hljs-name">el-collapse-item</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">el-collapse</span>&gt;</span>
 </code></pre></div></div>
-        <collapseBar :isExpand="switchers[2].expand" :index="2" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>Collapse Attributes</h3>
       <table class="table"><thead><tr><th>参数</th><th>说明</th><th>类型</th><th>可选值</th><th>默认值</th></tr></thead><tbody><tr><td>accordion</td><td>是否手风琴模式</td><td>boolean</td><td>—</td><td>false</td></tr><tr><td>value</td><td>当前激活的面板(如果是手风琴模式，绑定值类型需要为<code>string</code>，否则为<code>array</code>)</td><td>string/array</td><td>—</td><td>—</td></tr></tbody></table>
@@ -177,21 +177,12 @@
 
 <script type="text/ecmascript-6">
   import collapseBar from 'components/collapseBar/collapseBar'
-  import { collapseMixin } from 'common/js/mixin'
 
   export default {
-    mixins: [collapseMixin],
     data () {
       return {
         activeNames: ['1'],
-        activeName: '1',
-        switchers: [{
-          expand: false
-        }, {
-          expand: false
-        }, {
-          expand: false
-        }]
+        activeName: '1'
       }
     },
     methods: {

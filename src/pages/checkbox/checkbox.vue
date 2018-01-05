@@ -31,7 +31,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[0].expand" :index="0" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>禁用状态</h3>
       <p>多选框不可用状态。</p>
@@ -64,7 +64,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[1].expand" :index="1" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>多选框组</h3>
       <p>适用于多个勾选框绑定到同一个数组的情景，通过是否勾选来表示这一组选项中选中的项。</p>
@@ -117,7 +117,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[2].expand" :index="2" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>indeterminate 状态</h3>
       <p>indeterminate 属性用以表示 checkbox 的不确定状态，一般用于实现全选的效果</p>
@@ -179,7 +179,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[3].expand" :index="3" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>按钮样式</h3>
       <div class="demo-block">
@@ -274,7 +274,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[4].expand" :index="4" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>带有边框</h3>
       <div class="demo-block">
@@ -368,7 +368,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[5].expand" :index="5" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>Checkbox Attributes</h3>
       <table class="table">
@@ -621,35 +621,10 @@
         checked5: false,
         checked6: true,
         checkboxGroup5: [],
-        checkboxGroup6: [],
-        switchers: [{
-          expand: false
-        }, {
-          expand: false
-        }, {
-          expand: false
-        }, {
-          expand: false
-        }, {
-          expand: false
-        }, {
-          expand: false
-        }]
+        checkboxGroup6: []
       }
     },
-    mounted () {
-      this.meta = document.querySelectorAll('.meta')
-    },
     methods: {
-      switcherState (index) {
-        if (this.switchers[index].expand === true) {
-          this.meta[index].style.height = '0'
-          this.switchers[index].expand = false
-        } else {
-          this.meta[index].style.height = 'auto'
-          this.switchers[index].expand = true
-        }
-      },
       handleCheckAllChange (val) {
         this.checkedCities = val ? cityOptions : []
         this.isIndeterminate = false

@@ -71,7 +71,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[0].expand" :index="0" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>可选择</h3>
       <p>适用于需要选择层级时使用。</p>
@@ -153,7 +153,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[1].expand" :index="1" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>懒加载自定义叶子节点</h3>
       <div class="demo-block">
@@ -214,7 +214,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[2].expand" :index="2" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>默认展开和默认选中</h3>
       <p>可将 Tree 的某些节点设置为默认展开或默认选中</p>
@@ -292,7 +292,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[3].expand" :index="3" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>禁用状态</h3>
       <p>可将 Tree 的某些节点设置为禁用状态</p>
@@ -360,7 +360,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[4].expand" :index="4" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>树节点的选择</h3>
       <div class="demo-block demo-tree">
@@ -488,7 +488,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[5].expand" :index="5" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>自定义节点内容</h3>
       <p>节点的内容支持自定义，可以在节点区添加按钮或图标等内容</p>
@@ -602,7 +602,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[6].expand" :index="6" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>节点过滤</h3>
       <p>通过关键字过滤树节点</p>
@@ -698,7 +698,7 @@
   };
 </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 </code></pre></div></div>
-        <collapseBar :isExpand="switchers[7].expand" :index="7" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>手风琴模式</h3>
       <p>对于同一级的节点，每次只能展开一个</p>
@@ -771,7 +771,7 @@
   };
 </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 </code></pre></div></div>
-        <collapseBar :isExpand="switchers[8].expand" :index="8" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>国网定制版</h3>
       <p>根据国网需求在ztree基础上对源码及UI进行了修改，使用时请直接引用此版本，相关API详见<a href="http://www.treejs.cn/v3/main.php#_zTreeInfo">zTree官网</a></p>
@@ -1186,7 +1186,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[9].expand" :index="9" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>Attributes</h3>
       <table class="table"><thead><tr><th>参数</th><th>说明</th><th>类型</th><th>可选值</th><th>默认值</th></tr></thead><tbody><tr><td>data</td><td>展示数据</td><td>array</td><td>—</td><td>—</td></tr><tr><td>empty-text</td><td>内容为空的时候展示的文本</td><td>String</td><td>—</td><td>—</td></tr><tr><td>node-key</td><td>每个树节点用来作为唯一标识的属性，整棵树应该是唯一的</td><td>String</td><td>—</td><td>—</td></tr><tr><td>props</td><td>配置选项，具体看下表</td><td>object</td><td>—</td><td>—</td></tr><tr><td>render-after-expand</td><td>是否在第一次展开某个树节点后才渲染其子节点</td><td>boolean</td><td>—</td><td>true</td></tr><tr><td>load</td><td>加载子树数据的方法</td><td>function(node, resolve)</td><td>—</td><td>—</td></tr><tr><td>render-content</td><td>树节点的内容区的渲染 Function</td><td>Function(h, { node, data, store }</td><td>—</td><td>—</td></tr><tr><td>highlight-current</td><td>是否高亮当前选中节点，默认值是 false。</td><td>boolean</td><td>—</td><td>false</td></tr><tr><td>default-expand-all</td><td>是否默认展开所有节点</td><td>boolean</td><td>—</td><td>false</td></tr><tr><td>expand-on-click-node</td><td>是否在点击节点的时候展开或者收缩节点， 默认值为 true，如果为 false，则只有点箭头图标的时候才会展开或者收缩节点。</td><td>boolean</td><td>—</td><td>true</td></tr><tr><td>auto-expand-parent</td><td>展开子节点的时候是否自动展开父节点</td><td>boolean</td><td>—</td><td>true</td></tr><tr><td>default-expanded-keys</td><td>默认展开的节点的 key 的数组</td><td>array</td><td>—</td><td>—</td></tr><tr><td>show-checkbox</td><td>节点是否可被选择</td><td>boolean</td><td>—</td><td>false</td></tr><tr><td>check-strictly</td><td>在显示复选框的情况下，是否严格的遵循父子不互相关联的做法，默认为 false</td><td>boolean</td><td>—</td><td>false</td></tr><tr><td>default-checked-keys</td><td>默认勾选的节点的 key 的数组</td><td>array</td><td>—</td><td>—</td></tr><tr><td>filter-node-method</td><td>对树节点进行筛选时执行的方法，返回 true 表示这个节点可以显示，返回 false 则表示这个节点会被隐藏</td><td>Function(value, data, node)</td><td>—</td><td>—</td></tr><tr><td>accordion</td><td>是否每次只打开一个同级树节点展开</td><td>boolean</td><td>—</td><td>false</td></tr><tr><td>indent</td><td>相邻级节点间的水平缩进，单位为像素</td><td>number</td><td>—</td><td>16</td></tr></tbody></table>
@@ -1203,11 +1203,9 @@
 
 <script type="text/ecmascript-6">
   import collapseBar from 'components/collapseBar/collapseBar'
-  import { collapseMixin } from 'common/js/mixin'
 
   let id = 1000
   export default {
-    mixins: [collapseMixin],
     data () {
       return {
         data: [{
@@ -1357,28 +1355,7 @@
             label: '二级 3-2'
           }]
         }],
-        filterText: '',
-        switchers: [{
-          expand: false
-        }, {
-          expand: false
-        }, {
-          expand: false
-        }, {
-          expand: false
-        }, {
-          expand: false
-        }, {
-          expand: false
-        }, {
-          expand: false
-        }, {
-          expand: false
-        }, {
-          expand: false
-        }, {
-          expand: false
-        }]
+        filterText: ''
       }
     },
     methods: {

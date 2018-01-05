@@ -29,7 +29,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[0].expand" :index="0" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>文字描述</h3>
       <div class="demo-block">
@@ -77,7 +77,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[1].expand" :index="1" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>动态编辑标签</h3>
       <p>动态编辑标签可以通过点击标签关闭按钮后触发的 close 事件来实现。</p>
@@ -183,7 +183,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[2].expand" :index="2" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>不同尺寸</h3>
       <p>Tag 组件提供除了默认值以外的三种尺寸，可以在不同场景下选择合适的按钮尺寸。</p>
@@ -212,22 +212,89 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[3].expand" :index="3" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>Attributes</h3>
-      <table class="table"><thead><tr><th>参数</th><th>说明</th><th>类型</th><th>可选值</th><th>默认值</th></tr></thead><tbody><tr><td>type</td><td>主题</td><td>string</td><td>success/info/warning/danger</td><td>—</td></tr><tr><td>closable</td><td>是否可关闭</td><td>boolean</td><td>—</td><td>false</td></tr><tr><td>disable-transitions</td><td>是否禁用渐变动画</td><td>boolean</td><td>—</td><td>false</td></tr><tr><td>hit</td><td>是否有边框描边</td><td>boolean</td><td>—</td><td>false</td></tr><tr><td>color</td><td>背景色</td><td>string</td><td>—</td><td>—</td></tr><tr><td>size</td><td>尺寸</td><td>string</td><td>medium / small / mini</td><td>—</td></tr></tbody></table>
+      <table class="table">
+        <thead>
+        <tr>
+          <th>参数</th>
+          <th>说明</th>
+          <th>类型</th>
+          <th>可选值</th>
+          <th>默认值</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>type</td>
+          <td>主题</td>
+          <td>string</td>
+          <td>success/info/warning/danger</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td>closable</td>
+          <td>是否可关闭</td>
+          <td>boolean</td>
+          <td>—</td>
+          <td>false</td>
+        </tr>
+        <tr>
+          <td>disable-transitions</td>
+          <td>是否禁用渐变动画</td>
+          <td>boolean</td>
+          <td>—</td>
+          <td>false</td>
+        </tr>
+        <tr>
+          <td>hit</td>
+          <td>是否有边框描边</td>
+          <td>boolean</td>
+          <td>—</td>
+          <td>false</td>
+        </tr>
+        <tr>
+          <td>color</td>
+          <td>背景色</td>
+          <td>string</td>
+          <td>—</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td>size</td>
+          <td>尺寸</td>
+          <td>string</td>
+          <td>medium / small / mini</td>
+          <td>—</td>
+        </tr>
+        </tbody>
+      </table>
       <h3>Events</h3>
-      <table class="table"><thead><tr><th>事件名称</th><th>说明</th><th>回调参数</th></tr></thead><tbody><tr><td>close</td><td>关闭 Tag 时触发的事件</td><td>—</td></tr></tbody></table>
+      <table class="table">
+        <thead>
+        <tr>
+          <th>事件名称</th>
+          <th>说明</th>
+          <th>回调参数</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>close</td>
+          <td>关闭 Tag 时触发的事件</td>
+          <td>—</td>
+        </tr>
+        </tbody>
+      </table>
     </section>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
   import collapseBar from 'components/collapseBar/collapseBar'
-  import { collapseMixin } from 'common/js/mixin'
 
   export default {
-    mixins: [collapseMixin],
     data () {
       return {
         tags: [
@@ -239,16 +306,7 @@
         ],
         dynamicTags: ['标签一', '标签二', '标签三'],
         inputVisible: false,
-        inputValue: '',
-        switchers: [{
-          expand: false
-        }, {
-          expand: false
-        }, {
-          expand: false
-        }, {
-          expand: false
-        }]
+        inputValue: ''
       }
     },
     methods: {

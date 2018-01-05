@@ -49,7 +49,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[0].expand" :index="0" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>选择透明度</h3>
       <div class="demo-block">
@@ -75,7 +75,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[1].expand" :index="1" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>不同尺寸其它 icon</h3>
       <div class="demo-block">
@@ -113,7 +113,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[2].expand" :index="2" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>Attributes</h3>
       <table class="table"><thead><tr><th>参数</th><th>说明</th><th>类型</th><th>可选值</th><th>默认值</th></tr></thead><tbody><tr><td>disabled</td><td>是否禁用</td><td>boolean</td><td>—</td><td>false</td></tr><tr><td>size</td><td>尺寸</td><td>string</td><td>—</td><td>medium / small / mini</td></tr><tr><td>show-alpha</td><td>是否支持透明度选择</td><td>boolean</td><td>—</td><td>false</td></tr><tr><td>color-format</td><td>写入 v-model 的颜色的格式</td><td>string</td><td>hsl / hsv / hex / rgb</td><td>hex（show-alpha 为 false）/ rgb（show-alpha 为 true）</td></tr><tr><td>popper-class</td><td>ColorPicker 下拉框的类名</td><td>string</td><td>—</td><td>—</td></tr></tbody></table>
@@ -132,28 +132,7 @@
         color1: '#409EFF',
         color2: null,
         color3: 'rgba(19, 206, 102, 0.8)',
-        color4: '#409EFF',
-        switchers: [{
-          expand: false
-        }, {
-          expand: false
-        }, {
-          expand: false
-        }]
-      }
-    },
-    mounted () {
-      this.meta = document.querySelectorAll('.meta')
-    },
-    methods: {
-      switcherState (index) {
-        if (this.switchers[index].expand === true) {
-          this.meta[index].style.height = '0'
-          this.switchers[index].expand = false
-        } else {
-          this.meta[index].style.height = 'auto'
-          this.switchers[index].expand = true
-        }
+        color4: '#409EFF'
       }
     },
     components: {

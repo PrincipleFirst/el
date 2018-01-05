@@ -1,16 +1,17 @@
 <template>
-  <div class="demo-block-control" :class="_isFix" @click="sendIndex" ref="blockControl">
+  <div class="demo-block-control" :class="{'is-fixed':fixedControl===true}" @click="changeState" ref="blockControl">
     <i class="el-icon-caret-bottom"
-       :class="{'el-icon-caret-top':isExpand===true}"></i><span>{{isExpand === false ? '显示' : '隐藏'}}代码</span>
+       :class="{'el-icon-caret-top':isExpanded===true}"></i><span>{{isExpanded === false ? '显示' : '隐藏'}}代码</span>
   </div>
 </template>
 
 <script>
   const clientHeight = document.documentElement.clientHeight
   export default {
-    data() {
+    data () {
       return {
         fixedControl: false,
+        isExpanded: false,
         scrollParent: null
       }
     },
@@ -28,22 +29,15 @@
         default: 0
       }
     },
-    computed: {
-      _isFix() {
-        if (this.fixedControl === true) {
-          return 'is-fixed'
-        }
-      }
-    },
-    mounted() {
-      this.meta = document.querySelectorAll('.meta')
+    mounted () {
       this.initScroll()
     },
     watch: {
-      isExpand: function (newVal) {
+      isExpanded: function (newVal) {
         console.log(newVal)
+        const meta = this.$refs.blockControl.previousElementSibling
         if (newVal === true) {
-          const pos = this.$refs.blockControl.previousElementSibling.getBoundingClientRect()
+          const pos = meta.getBoundingClientRect()
           this.fixedControl = pos.bottom > clientHeight && pos.top + 44 <= clientHeight
         } else {
           this.fixedControl = false
@@ -51,16 +45,22 @@
       }
     },
     methods: {
-      sendIndex() {
-        // console.log(this.$refs.blockControl.parentNode)
+      changeState () {
+        this.isExpanded = !this.isExpanded
+        const meta = this.$refs.blockControl.previousElementSibling
+        if (this.isExpanded === true) {
+          meta.style.height = 'auto'
+        } else {
+          meta.style.height = '0'
+        }
         this.$emit('switcher', this.index)
       },
-      initScroll() {
+      initScroll () {
         this.scrollParent = document.getElementById('main-scrollbar')
         this.scrollParent.addEventListener('scroll', this.scrollHandler)
       },
-      scrollHandler() {
-        if (this.isExpand === true) {
+      scrollHandler () {
+        if (this.isExpanded === true) {
           const pos = this.$refs.blockControl.previousElementSibling.getBoundingClientRect()
           const fixed = pos.bottom > clientHeight && pos.top + 44 <= clientHeight
           if (this.fixedControl !== fixed) {
@@ -68,11 +68,11 @@
           }
         }
       },
-      removeScrollHandler() {
+      removeScrollHandler () {
         this.scrollParent && this.scrollParent.removeEventListener('scroll', this.scrollHandler)
       }
     },
-    beforeDestroy() {
+    beforeDestroy () {
       this.removeScrollHandler()
     }
   }

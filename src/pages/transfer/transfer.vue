@@ -48,7 +48,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[0].expand" :index="0" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>可搜索</h3>
       <p>在数据很多的情况下，可以对数据进行搜索和过滤。</p>
@@ -114,7 +114,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[1].expand" :index="1" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>可自定义</h3>
       <p>可以对列表标题文案、按钮文案、数据项的渲染函数、列表底部的勾选状态文案、列表底部的内容区等进行自定义。</p>
@@ -216,7 +216,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[2].expand" :index="2" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>数据项属性别名</h3>
       <p>默认情况下，Transfer 仅能识别数据项中的 key、label 和 disabled 字段。如果你的数据的字段名不同，可以使用 props 属性为它们设置别名。</p>
@@ -274,7 +274,7 @@
 </code></pre>
           </div>
         </div>
-        <collapseBar :isExpand="switchers[3].expand" :index="3" @switcher="switcherState"></collapseBar>
+        <collapseBar></collapseBar>
       </div>
       <h3>Attributes</h3>
       <table class="table"><thead><tr><th>参数</th><th>说明</th><th>类型</th><th>可选值</th><th>默认值</th></tr></thead><tbody><tr><td>data</td><td>Transfer 的数据源</td><td>array[{ key, label, disabled }]</td><td>—</td><td>[ ]</td></tr><tr><td>filterable</td><td>是否可搜索</td><td>boolean</td><td>—</td><td>false</td></tr><tr><td>filter-placeholder</td><td>搜索框占位符</td><td>string</td><td>—</td><td>请输入搜索内容</td></tr><tr><td>filter-method</td><td>自定义搜索方法</td><td>function</td><td>—</td><td>—</td></tr><tr><td>titles</td><td>自定义列表标题</td><td>array</td><td>—</td><td>['列表 1', '列表 2']</td></tr><tr><td>button-texts</td><td>自定义按钮文案</td><td>array</td><td>—</td><td>[ ]</td></tr><tr><td>render-content</td><td>自定义数据项渲染函数</td><td>function(h, option)</td><td>—</td><td>—</td></tr><tr><td>format</td><td>列表顶部勾选状态文案</td><td>object{noChecked, hasChecked}</td><td>—</td><td>{ noChecked: '${checked}/${total}', hasChecked: '${checked}/${total}' }</td></tr><tr><td>props</td><td>数据源的字段别名</td><td>object{key, label, disabled}</td><td>—</td><td>—</td></tr><tr><td>left-default-checked</td><td>初始状态下左侧列表的已勾选项的 key 数组</td><td>array</td><td>—</td><td>[ ]</td></tr><tr><td>right-default-checked</td><td>初始状态下右侧列表的已勾选项的 key 数组</td><td>array</td><td>—</td><td>[ ]</td></tr></tbody></table>
@@ -339,31 +339,11 @@
           return <span> {option.key} - {option.label} </span>
         },
         data3: generateData3(),
-        value4: [],
-        switchers: [{
-          expand: false
-        }, {
-          expand: false
-        }, {
-          expand: false
-        }, {
-          expand: false
-        }]
+        value4: []
       }
     },
-    mounted () {
-      this.meta = document.querySelectorAll('.meta')
-    },
+
     methods: {
-      switcherState (index) {
-        if (this.switchers[index].expand === true) {
-          this.meta[index].style.height = '0'
-          this.switchers[index].expand = false
-        } else {
-          this.meta[index].style.height = 'auto'
-          this.switchers[index].expand = true
-        }
-      },
       handleChange (value, direction, movedKeys) {
         console.log(value, direction, movedKeys)
       }
