@@ -102,19 +102,29 @@
       onMouseMove() {
         const target = this.$refs.jumbotron
         const a = this.getValues(target)
-        this.target.style.transform = `perspective(${this.config.perspective}px) rotateX(${(this.config.disabledAxis ? 0 : a.tiltY)}deg) rotateY(${(this.config.disabledAxis ? 0 : a.tiltX)} + 'deg) scale3d(${this.config.scale}, ${this.config.scale}, ${this.config.scale})`
+        target.style.transform = `perspective(${this.config.perspective}px) rotateX(${(this.config.disabledAxis ? 0 : a.tiltY)}deg) rotateY(${(this.config.disabledAxis ? 0 : a.tiltX)} + 'deg) scale3d(${this.config.scale}, ${this.config.scale}, ${this.config.scale})`
         window.requestAnimationFrame(() => {
           this.layers.forEach(function (a) {
-            this.translateLayers(a, s.clientX, s.clientY)
+            this.translateLayers(a, target.clientX, target.clientY)
           })
         })
       },
       getValues(s) {
-        var t = (s.pageX - this.left) / this.width, a = (s.pageY - this.top) / this.height
-        return t = Math.min(Math.max(t, 0), 1), a = Math.min(Math.max(a, 0), 1), {
+        let t = (s.pageX - this.left) / this.width
+        let a = (s.pageY - this.top) / this.height
+        t = Math.min(Math.max(t, 0), 1)
+        a = Math.min(Math.max(a, 0), 1)
+        return {
           tiltX: (this.config.reverseTilt ? -1 : 1) * (this.config.max / 2 - t * this.config.max).toFixed(2),
           tiltY: (this.config.reverseTilt ? -1 : 1) * (a * this.config.max - this.config.max / 2).toFixed(2)
         }
+      },
+      translateLayers(s, t, a) {
+        const l = s.multiple
+        const n = s.reverseTranslate
+        const e = Math.floor(l * (0.5 * document.body.clientWidth + (n ? -1 : 1) * t))
+        const r = Math.floor(l * (0.5 * document.body.clientHeight + (n ? -1 : 1) * a))
+        this.doTranslate(s, e, r)
       }
     }
   }
