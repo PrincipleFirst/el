@@ -7,79 +7,12 @@
           alt="element-logo" class="nav-logo">
         </a></h1>
           <ul class="nav">
-            <li class="nav-item nav-algolia-search" style="display: none;">
-              <div aria-haspopup="listbox" role="combobox" aria-owns="el-autocomplete-1865"
-                   class="el-autocomplete">
-                <div class="el-input el-input--small" valuekey="value" popperclass="algolia-search"
-                     fetchsuggestions="function n(n){var r=arguments.length;return r?r>1?t.apply(e,arguments):t.call(e,n):t.call(e)}"
-                     debounce="300"><!----><input autocomplete="off" placeholder="搜索文档" size="small" type="text"
-                                                  rows="2"
-                                                  validateevent="true" class="el-input__inner" role="textbox"
-                                                  aria-autocomplete="list" aria-controls="id"
-                                                  aria-activedescendant="el-autocomplete-1865-item--1"><!----><!---->
-                  <!----></div>
-              </div>
-            </li>
             <li class="nav-item"><a href="#/zh-CN/guide" class="">指南
             </a></li>
             <li class="nav-item"><a href="#/zh-CN/component" class="">组件
             </a></li>
             <li class="nav-item" style="display: none;">
               <div class="nav-gap"></div>
-            </li>
-            <li class="nav-item nav-versions" style="display: none;">
-              <div class="nav-dropdown el-dropdown"><span aria-haspopup="list"
-                                                          aria-controls="dropdown-menu-7757"
-                                                          role="button" tabindex="0"
-                                                          class=" el-dropdown-selfdefine">
-              2.0.10
-              <i class="el-icon-arrow-down el-icon--right"></i></span>
-                <ul class="el-dropdown-menu el-popper nav-dropdown-list" style="display: none;"
-                    id="dropdown-menu-7757">
-                  <li tabindex="-1" class="el-dropdown-menu__item">
-                    1.4.12
-                  </li>
-                  <li tabindex="-1" class="el-dropdown-menu__item">
-                    2.0.10
-                  </li>
-                </ul>
-              </div>
-            </li>
-            <li class="nav-item nav-theme-switch" style="display: none;">
-              <div class="theme-picker el-color-picker"><!---->
-                <div class="el-color-picker__trigger"><span class="el-color-picker__color"><span
-                  class="el-color-picker__color-inner" style="background-color: rgb(64, 158, 255);"></span>
-                  <!----></span><span class="el-color-picker__icon el-icon-arrow-down"></span></div>
-                <div class="el-color-dropdown el-color-picker__panel theme-picker-dropdown" style="display: none;">
-                  <div class="el-color-dropdown__main-wrapper">
-                    <div class="el-color-hue-slider is-vertical" style="float: right;">
-                      <div class="el-color-hue-slider__bar"></div>
-                      <div class="el-color-hue-slider__thumb" style="left: 0px; top: 0px;"></div>
-                    </div>
-                    <div class="el-color-svpanel" style="background-color: rgb(0, 127, 255);">
-                      <div class="el-color-svpanel__white"></div>
-                      <div class="el-color-svpanel__black"></div>
-                      <div class="el-color-svpanel__cursor" style="top: 0px; left: 0px;">
-                        <div></div>
-                      </div>
-                    </div>
-                  </div><!---->
-                  <div class="el-color-dropdown__btns"><span class="el-color-dropdown__value"><div
-                    class="el-input el-input--mini"><!----><input autocomplete="off" size="mini" type="text" rows="2"
-                                                                  validateevent="true" class="el-input__inner"><!---->
-                    <!----><!----></div></span>
-                    <button type="button" class="el-button el-color-dropdown__link-btn el-button--text el-button--mini">
-                      <!----><!----><span>
-        清空
-      </span></button>
-                    <button type="button"
-                            class="el-button el-color-dropdown__btn el-button--default el-button--mini is-plain"><!---->
-                      <!----><span>
-        确定
-      </span></button>
-                  </div>
-                </div>
-              </div>
             </li>
           </ul>
         </div>
@@ -90,7 +23,7 @@
         <div class="banner-desc"><h1>网站快速成型工具</h1>
           <p>Element，一套为开发者、设计师和产品经理准备的基于 Vue 2.0 的桌面端组件库</p></div>
       </div>
-      <div class="jumbotron"
+      <div class="jumbotron" ref="jumbotron"
            style="transform: perspective(700px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);">
         <div><img
           src="data:image/png;base64,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"
@@ -122,167 +55,200 @@
           class="jumbotron-compo-3">
         </div>
       </div>
-      <a href="https://tipe.io/?ref=element" target="_blank" class="sponsor"><img
-        width="35px"
-        src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwIDAgMTQ4LjMyIDIyNi42OSI+CiAgPGRlZnM+CiAgICA8c3R5bGU+CiAgICAgIC5jbHMtMSB7CiAgICAgICAgaXNvbGF0aW9uOiBpc29sYXRlOwogICAgICB9CgogICAgICAuY2xzLTIgewogICAgICAgIGZpbGw6IHVybCgjcmFkaWFsLWdyYWRpZW50KTsKICAgICAgfQoKICAgICAgLmNscy0zIHsKICAgICAgICBmaWxsOiB1cmwoI2xpbmVhci1ncmFkaWVudCk7CiAgICAgIH0KCiAgICAgIC5jbHMtNCB7CiAgICAgICAgZmlsbDogdXJsKCNsaW5lYXItZ3JhZGllbnQtMik7CiAgICAgIH0KCiAgICAgIC5jbHMtNSB7CiAgICAgICAgZmlsbDogdXJsKCNsaW5lYXItZ3JhZGllbnQtMyk7CiAgICAgIH0KCiAgICAgIC5jbHMtNiB7CiAgICAgICAgZmlsbDogdXJsKCNsaW5lYXItZ3JhZGllbnQtNCk7CiAgICAgIH0KCiAgICAgIC5jbHMtNyB7CiAgICAgICAgZmlsbDogdXJsKCNsaW5lYXItZ3JhZGllbnQtNSk7CiAgICAgIH0KCiAgICAgIC5jbHMtOCB7CiAgICAgICAgZmlsbDogdXJsKCNsaW5lYXItZ3JhZGllbnQtNik7CiAgICAgIH0KCiAgICAgIC5jbHMtOSB7CiAgICAgICAgb3BhY2l0eTogMC43OwogICAgICB9CgogICAgICAuY2xzLTExLCAuY2xzLTkgewogICAgICAgIG1peC1ibGVuZC1tb2RlOiBtdWx0aXBseTsKICAgICAgfQoKICAgICAgLmNscy0xMCB7CiAgICAgICAgZmlsbDogdXJsKCNsaW5lYXItZ3JhZGllbnQtNyk7CiAgICAgIH0KCiAgICAgIC5jbHMtMTIgewogICAgICAgIGZpbGw6IHVybCgjbGluZWFyLWdyYWRpZW50LTgpOwogICAgICB9CgogICAgICAuY2xzLTEzIHsKICAgICAgICBmaWxsOiB1cmwoI2xpbmVhci1ncmFkaWVudC05KTsKICAgICAgfQoKICAgICAgLmNscy0xNCB7CiAgICAgICAgZmlsbDogIzNjMmUzNjsKICAgICAgfQoKICAgICAgLmNscy0xNSB7CiAgICAgICAgZmlsbDogdXJsKCNsaW5lYXItZ3JhZGllbnQtMTApOwogICAgICB9CgogICAgICAuY2xzLTE2IHsKICAgICAgICBmaWxsOiB1cmwoI3JhZGlhbC1ncmFkaWVudC0yKTsKICAgICAgfQogICAgPC9zdHlsZT4KICAgIDxyYWRpYWxHcmFkaWVudCBpZD0icmFkaWFsLWdyYWRpZW50IiBjeD0iNzQuOTMiIGN5PSIxMTcuODciIHI9Ijg2LjM5IiBncmFkaWVudFRyYW5zZm9ybT0idHJhbnNsYXRlKDAgMjIuNzIpIHNjYWxlKDEgMS4wNykiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwLjMyIiBzdG9wLWNvbG9yPSIjZTRkY2UxIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMC40OCIgc3RvcC1jb2xvcj0iI2UxZGFkZiIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjAuNTkiIHN0b3AtY29sb3I9IiNkOWQzZGEiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIwLjY4IiBzdG9wLWNvbG9yPSIjY2FjN2QyIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMC43NiIgc3RvcC1jb2xvcj0iI2I1YjZjNiIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjAuNzkiIHN0b3AtY29sb3I9IiNhYWFkYzAiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjNmY2Zjg1Ii8+CiAgICA8L3JhZGlhbEdyYWRpZW50PgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJsaW5lYXItZ3JhZGllbnQiIHgxPSIzOC44NSIgeTE9IjEyMi41MyIgeDI9IjEwOC4xOCIgeTI9IjEwOC4zOCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNlNGRjZTEiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIwLjE5IiBzdG9wLWNvbG9yPSIjZDdkMGQ3Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iMC41MyIgc3RvcC1jb2xvcj0iI2I1YjJiZSIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjAuOTciIHN0b3AtY29sb3I9IiM4MDgyOTYiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImxpbmVhci1ncmFkaWVudC0yIiB4MT0iMzIuMjUiIHkxPSI2NC43IiB4Mj0iMTQ4LjQ0IiB5Mj0iNjQuNyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAuMzIiIHN0b3AtY29sb3I9IiNlNGRjZTEiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIwLjQ5IiBzdG9wLWNvbG9yPSIjZTFkYWRmIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMC42IiBzdG9wLWNvbG9yPSIjZDlkM2RhIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMC42OSIgc3RvcC1jb2xvcj0iI2NhYzdkMiIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjAuNzgiIHN0b3AtY29sb3I9IiNiNWI2YzYiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIwLjgxIiBzdG9wLWNvbG9yPSIjYWFhZGMwIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzZmNmY4NSIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0ibGluZWFyLWdyYWRpZW50LTMiIHgxPSIxMzkuMTEiIHkxPSI2OC4zNCIgeDI9IjEzOS4xMSIgeTI9IjEuMTciIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwLjEyIiBzdG9wLWNvbG9yPSIjODg4YWEwIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMC41NCIgc3RvcC1jb2xvcj0iIzcxNmY4YSIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjAuODkiIHN0b3AtY29sb3I9IiM2MzVkN2MiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImxpbmVhci1ncmFkaWVudC00IiB4MT0iMTExLjk0IiB5MT0iMTYuMDUiIHgyPSIxMzUuMzYiIHkyPSIxNi4wNSIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiMzYzMxNGIiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIwLjU0IiBzdG9wLWNvbG9yPSIjNTM0YTY3Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iMC44OSIgc3RvcC1jb2xvcj0iIzYzNWQ3YyIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0ibGluZWFyLWdyYWRpZW50LTUiIHgxPSI2NzUyLjA0IiB5MT0iNjguMzQiIHgyPSI2NzUyLjA0IiB5Mj0iLTMuNDUiIGdyYWRpZW50VHJhbnNmb3JtPSJtYXRyaXgoLTEsIDAsIDAsIDEsIDY3ODcuNjgsIDApIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMC4xOSIgc3RvcC1jb2xvcj0iI2U0ZGNlMSIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjAuNDIiIHN0b3AtY29sb3I9IiNjMmJhYzYiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIwLjkyIiBzdG9wLWNvbG9yPSIjNmI2NTgyIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMC45NyIgc3RvcC1jb2xvcj0iIzYzNWQ3YyIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0ibGluZWFyLWdyYWRpZW50LTYiIHgxPSIzOS4zOSIgeTE9IjE2LjA1IiB4Mj0iNjIuODIiIHkyPSIxNi4wNSIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiMzYzMxNGIiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIwLjAyIiBzdG9wLWNvbG9yPSIjM2QzMjRjIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMC4zNSIgc3RvcC1jb2xvcj0iIzUyNGE2NiIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjAuNjUiIHN0b3AtY29sb3I9IiM1ZjU4NzYiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIwLjg5IiBzdG9wLWNvbG9yPSIjNjM1ZDdjIi8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJsaW5lYXItZ3JhZGllbnQtNyIgeDE9Ijc5LjY2IiB5MT0iMjI5LjA1IiB4Mj0iNzkuNjYiIHkyPSIxOTQuODIiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwLjAzIiBzdG9wLWNvbG9yPSIjODA4Mjk2Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iMC4zMSIgc3RvcC1jb2xvcj0iI2I3YjhjMyIgc3RvcC1vcGFjaXR5PSIwLjc4Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iMC43OSIgc3RvcC1jb2xvcj0iI2ZmZiIgc3RvcC1vcGFjaXR5PSIwLjUiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImxpbmVhci1ncmFkaWVudC04IiB4MT0iODcuMzgiIHkxPSIxMTcuODQiIHgyPSI4Ny4zOCIgeTI9IjQxLjc3IiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2UzZGRkZiIgc3RvcC1vcGFjaXR5PSIwIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMC4wNCIgc3RvcC1jb2xvcj0iI2NiYzVjZCIgc3RvcC1vcGFjaXR5PSIwLjEyIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMC4xNSIgc3RvcC1jb2xvcj0iIzlkOTdhOSIgc3RvcC1vcGFjaXR5PSIwLjM3Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iMC4yNSIgc3RvcC1jb2xvcj0iIzdiNzU4ZiIgc3RvcC1vcGFjaXR5PSIwLjU0Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iMC4zNSIgc3RvcC1jb2xvcj0iIzY3NjE3ZiIgc3RvcC1vcGFjaXR5PSIwLjY1Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iMC40NSIgc3RvcC1jb2xvcj0iIzYwNWE3YSIgc3RvcC1vcGFjaXR5PSIwLjY4Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iMC41NCIgc3RvcC1jb2xvcj0iIzU3NTA3MCIgc3RvcC1vcGFjaXR5PSIwLjc1Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzM4MmU0YSIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0ibGluZWFyLWdyYWRpZW50LTkiIHgxPSIxMTM1Ny4yMiIgeTE9Ijc4LjgiIHgyPSIxMTM2MS40NiIgeTI9IjU4LjQ5IiBncmFkaWVudFRyYW5zZm9ybT0ibWF0cml4KC0xLCAwLCAwLCAxLCAxMTQxOS4zNCwgMCkiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwLjA3IiBzdG9wLWNvbG9yPSIjMjhmZmZmIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMC40MSIgc3RvcC1jb2xvcj0iIzUxZDJmZiIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjAuOCIgc3RvcC1jb2xvcj0iIzdiYTNmZiIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiM4YjkxZmYiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImxpbmVhci1ncmFkaWVudC0xMCIgeDE9IjExMyIgeTE9Ijc4LjgiIHgyPSIxMTcuMjQiIHkyPSI1OC40OSIgZ3JhZGllbnRUcmFuc2Zvcm09Im1hdHJpeCgxLCAwLCAwLCAxLCAwLCAwKSIgeGxpbms6aHJlZj0iI2xpbmVhci1ncmFkaWVudC05Ii8+CiAgICA8cmFkaWFsR3JhZGllbnQgaWQ9InJhZGlhbC1ncmFkaWVudC0yIiBjeD0iMzYuMDkiIGN5PSIxMjQuNzEiIHI9IjM2LjEzIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMC4xMSIgc3RvcC1jb2xvcj0iIzYzNWQ3YyIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjAuMzUiIHN0b3AtY29sb3I9IiM1ZjU4NzYiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIwLjY1IiBzdG9wLWNvbG9yPSIjNTI0YTY2Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iMC45OCIgc3RvcC1jb2xvcj0iIzNkMzI0YyIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMzYzMxNGIiLz4KICAgIDwvcmFkaWFsR3JhZGllbnQ+CiAgPC9kZWZzPgogIDx0aXRsZT5Bc3NldCAzPC90aXRsZT4KICA8ZyBjbGFzcz0iY2xzLTEiPgogICAgPGcgaWQ9IkxheWVyXzIiIGRhdGEtbmFtZT0iTGF5ZXIgMiI+CiAgICAgIDxnIGlkPSJMYXllcl8xLTIiIGRhdGEtbmFtZT0iTGF5ZXIgMSI+CiAgICAgICAgPGc+CiAgICAgICAgICA8cGF0aCBjbGFzcz0iY2xzLTIiIGQ9Ik0xMzguMTMsMTI4LjI3Yy00LjctOS43OC0xMS4yOS0yMS4yOC05Ljc1LTMzLjU1YTE1LjgzLDE1LjgzLDAsMCwxLDMuMjYtOC4yNkE2NS4xMiw2NS4xMiwwLDAsMSwxMTQuNzUsOTlhNjQuMSw2NC4xLDAsMCwxLTYuMTEsMi43Niw2Ni42MSw2Ni42MSwwLDAsMC0xNC4zNSw5LjQyYy0xMy40MywxMS43LTI2LjIxLDQ0LjM5LTQ4LjUxLDUwLjZoMGEyMy45LDIzLjksMCwwLDEtOS44MSwyYy05LjQxLS4wNy0yMC40LTYuMjEtMjYuMjYtMTUuNDNDMSwxMzQuNjgsMy41OCwxMTUuODUsOS40OSwxMDMuODFjLS4xOC4zNy0uMzcuNzQtLjU1LDEuMTNhMTAyLjUxLDEwMi41MSwwLDAsMC00LjIsMTAuNDJ2MEE4Ni4zNyw4Ni4zNywwLDAsMCwwLDE0My42OWMwLDQ1Ljg0LDM1LjQ5LDgzLDc5LjI3LDgzLDExLjE5LDAsMjktMy4zOCw0My42Ni0xMy42MWE1Ny43NSw1Ny43NSwwLDAsMCwyMi41Ny0zMkMxNTEuNTQsMTU4LjU4LDE0NC45NCwxNDIuNDUsMTM4LjEzLDEyOC4yN1oiLz4KICAgICAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMyIgZD0iTTUxLjQ2LDE1OC4zN2EyNywyNywwLDAsMS01LjY3LDMuMzhoMGMyMi4zLTYuMjEsMzUuMDctMzguOSw0OC41MS01MC42YTY2LjYxLDY2LjYxLDAsMCwxLDE0LjM1LTkuNDIsNTguNjcsNTguNjcsMCwwLDEtMjEuMjYsNC4wOWMtMTkuNzUsMC0zNy43NS0xMC40OS00OC4zMS0yNCwxLDEuMzksMTMsMTUuNDYsMjIuMjksNDMuNzJBMzAsMzAsMCwwLDEsNTEuNDYsMTU4LjM3WiIvPgogICAgICAgICAgPHBhdGggY2xhc3M9ImNscy00IiBkPSJNMTQ1LjMzLDU5LjU2Yy0yLjA4LDIyLjI5LTI4LjI2LDQ2LjI2LTU4LDQ2LjI2LTI5Ljk1LDAtNTUuODgtMjQuMTItNTgtNDYuMjYtMS40NS0xNS42LDcuMzQtMzYsNTgtMzZTMTQ2Ljc4LDQ0LDE0NS4zMyw1OS41NloiLz4KICAgICAgICAgIDxwYXRoIGNsYXNzPSJjbHMtNSIgZD0iTTEzNS4zNiwwaDBhNTEuNTksNTEuNTksMCwwLDAtNC42OCwzMi4xQTM3LjIxLDM3LjIxLDAsMCwxLDEzNCwzNC4yNGMxMCw3LjIzLDEyLjEyLDE3LDExLjM0LDI1LjMyYTM1LjIsMzUuMiwwLDAsMS0xLjYsNy42MUE3My40NSw3My40NSwwLDAsMCwxNDIuMDgsMTIsNzEuMTgsNzEuMTgsMCwwLDAsMTM1LjM2LDBaIi8+CiAgICAgICAgICA8cGF0aCBjbGFzcz0iY2xzLTYiIGQ9Ik0xMzAuNjgsMzIuMUE1MS41OSw1MS41OSwwLDAsMSwxMzUuMzYsMGgwYTU3LjkyLDU3LjkyLDAsMCwwLTkuNDEsNi44Nyw1OS44LDU5LjgsMCwwLDAtMTQsMTguNzVxMy4zNS42NCw2LjI5LDEuNDVBNTMuMDksNTMuMDksMCwwLDEsMTMwLjY4LDMyLjFaIi8+CiAgICAgICAgICA8cGF0aCBjbGFzcz0iY2xzLTciIGQ9Ik0zOS4zOSwwaDBhNTEuNTksNTEuNTksMCwwLDEsNC42OCwzMi4xLDM3LjIxLDM3LjIxLDAsMCwwLTMuMzEsMi4xNGMtMTAsNy4yMy0xMi4xMiwxNy0xMS4zNCwyNS4zMkEzNS4yLDM1LjIsMCwwLDAsMzEsNjcuMTcsNzMuNDUsNzMuNDUsMCwwLDEsMzIuNjcsMTIsNzEuMTgsNzEuMTgsMCwwLDEsMzkuMzksMFoiLz4KICAgICAgICAgIDxwYXRoIGNsYXNzPSJjbHMtOCIgZD0iTTQ4LjgxLDYuODdBNTcuOTIsNTcuOTIsMCwwLDAsMzkuMzksMGgwYTUxLjU5LDUxLjU5LDAsMCwxLDQuNjgsMzIuMSw1My4wOSw1My4wOSwwLDAsMSwxMi40NS01cTIuOTQtLjgyLDYuMjktMS40NUE1OS44LDU5LjgsMCwwLDAsNDguODEsNi44N1oiLz4KICAgICAgICAgIDxnIGNsYXNzPSJjbHMtOSI+CiAgICAgICAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMTAiIGQ9Ik04NC4yNCwxODIuNmMtMjYuMDgsMC00OS41Niw1LjQyLTY2LDE0LjA4LDE0LjU0LDE4LjMzLDM2LjQ3LDMwLDYxLDMwLDExLjE5LDAsMjktMy4zOCw0My42Ni0xMy42MUE1OC44MSw1OC44MSwwLDAsMCwxNDEsMTkyLjQ3QzEyNS41NiwxODYuMywxMDUuNzksMTgyLjYsODQuMjQsMTgyLjZaIi8+CiAgICAgICAgICA8L2c+CiAgICAgICAgICA8Zz4KICAgICAgICAgICAgPGcgY2xhc3M9ImNscy0xMSI+CiAgICAgICAgICAgICAgPHBhdGggY2xhc3M9ImNscy0xMiIgZD0iTTEzOC41MSw1Mi45NGMtLjU2LTIuOTQtMi01LjE5LTUtNS44OC03Ljg4LTEuODUtMjcsOS44NC0zNy44LDE1LjM0LTQsMi4wNi02LjE2LDMuMDUtOC4zNCwzcy00LjMxLS45NC04LjM0LTNjLTEwLjc3LTUuNS0yOS45Mi0xNy4xOC0zNy44LTE1LjM0LTMsLjctNC40NCwyLjk0LTUsNS44OC0xLDUuMTYuMzUsMTgsOS44OSwyNy40OSw3LjE0LDcuMTEsMTYuNjgsMTAuNDYsMjQuNjksMTIuNzFsLjE4LjA4YTQuMiw0LjIsMCwwLDAtLjA5Ljg4YzAsMy4yOCwzLjgzLDUuOTQsOC41Niw1Ljk0LDIuMzQsMCw2LjM1LS42NSw3LjktMS43MWgwYzEuNTUsMS4wNiw1LjU2LDEuNzEsNy45LDEuNzEsNC43MywwLDguNTYtMi42Niw4LjU2LTUuOTRhNC4yLDQuMiwwLDAsMC0uMDktLjg4bC4xOC0uMDhjOC0yLjI1LDE3LjU2LTUuNiwyNC42OS0xMi43MUMxMzguMTYsNzAuOTIsMTM5LjQ5LDU4LjEsMTM4LjUxLDUyLjk0WiIvPgogICAgICAgICAgICA8L2c+CiAgICAgICAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMTMiIGQ9Ik03NS4yNiw3NS4zNUM2NC41Niw4Ni44NSw0Ny44MSw3Ny4wOSw0NSw2My4yOGMtMS44My05LjA3LDMuNjMtNy43Myw4LjcxLTUuNjdDNjAuMTQsNjAuMiw2OC44NCw2Ni4yNyw3NS4yNiw3NS4zNVoiLz4KICAgICAgICAgICAgPHBhdGggY2xhc3M9ImNscy0xNCIgZD0iTTYwLjQzLDY4LjI2YTE1LjE2LDE1LjE2LDAsMCwxLTIuMTksOCwxNS41NiwxNS41NiwwLDAsMSwwLTE1LjkyQTE1LjE2LDE1LjE2LDAsMCwxLDYwLjQzLDY4LjI2WiIvPgogICAgICAgICAgICA8cGF0aCBkPSJNODcuMzYsODYuNjRhOC4xNSw4LjE1LDAsMCwwLTYuMjcsMi40OWM4LjI1LDUuMTcsNC4zMSw1LjE3LDEyLjU1LDBBOC4xNSw4LjE1LDAsMCwwLDg3LjM2LDg2LjY0WiIvPgogICAgICAgICAgICA8cGF0aCBjbGFzcz0iY2xzLTE1IiBkPSJNOTkuODYsNzUuMzVjMTAuNjksMTEuNSwyNy40NSwxLjc0LDMwLjIzLTEyLjA3LDEuODMtOS4wNy0zLjYzLTcuNzMtOC43MS01LjY3QzExNSw2MC4yLDEwNi4yOCw2Ni4yNyw5OS44Niw3NS4zNVoiLz4KICAgICAgICAgICAgPHBhdGggY2xhc3M9ImNscy0xNCIgZD0iTTExNC42OSw2OC4yNmExNS4xNiwxNS4xNiwwLDAsMCwyLjE5LDgsMTUuNTYsMTUuNTYsMCwwLDAsMC0xNS45MkExNS4xNiwxNS4xNiwwLDAsMCwxMTQuNjksNjguMjZaIi8+CiAgICAgICAgICA8L2c+CiAgICAgICAgICA8cGF0aCBjbGFzcz0iY2xzLTE2IiBkPSJNOS43MSwxNDguMzVjNS44Niw5LjIyLDE2Ljg1LDE1LjM3LDI2LjI2LDE1LjQzYTIzLjcsMjMuNywwLDAsMCw4LjIxLTEuNDFsMCwwYy0xNSw0LjE4LTE5LjMyLTI1LjE2LTEwLjkyLTQzLjA2djBjMS4wOS0zLjM4LDIuMzUtNi4zNCwzLjQyLTguODMuMzctLjg2LDIuNTMtNS4xNSwyLjA5LTkuOC0uODQtOS0xNC0xNy4zMy0yNC01LjM3QTQ0LjUyLDQ0LjUyLDAsMCwwLDkuMzksMTA0QzMuNTUsMTE2LjA2LDEuMDgsMTM0Ljc2LDkuNzEsMTQ4LjM1WiIvPgogICAgICAgIDwvZz4KICAgICAgPC9nPgogICAgPC9nPgogIDwvZz4KPC9zdmc+Cg=="
-        alt="tipe.io">
-        <div><p>Sponsored by Tipe.io</p>
-          <p>Next Generation API-first CMS</p></div>
-      </a>
-      <div class="cards">
-        <ul class="container">
-          <li>
-            <div class="card"><img src="static/guide.0a8462c.png" alt="">
-              <h3>指南</h3>
-              <p>了解设计指南，帮助产品设计人员搭建逻辑清晰、结构合理且高效易用的产品。</p><a
-                href="#/zh-CN/guide/design" class="">查看详情
-              </a></div>
-          </li>
-          <li>
-            <div class="card"><img src="static/component.bd3411b.png" alt="">
-              <h3>组件</h3>
-              <p>使用组件 Demo 快速体验交互细节；使用前端框架封装的代码帮助工程师快速开发。</p><a
-                href="#/zh-CN/component/layout"
-                class="">查看详情
-              </a></div>
-          </li>
-          <li>
-            <div class="card"><img src="static/resource.a72b8f8.png" alt="">
-              <h3>资源</h3>
-              <p>下载相关资源，用其快速搭建页面原型或高保真视觉稿，提升产品设计效率。</p><a href="#/zh-CN/resource"
-                                                          class="">查看详情
-              </a></div>
-          </li>
-        </ul>
-      </div>
     </div>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
+  export default {
+    data() {
+      return {
+        config: {
+          layers: [],
+          max: 20,
+          reverseTilt: !1,
+          perspective: 1e3,
+          easing: 'cubic-bezier(.03, .98, .52, .99)',
+          scale: 1,
+          speed: 300,
+          disabledAxis: '',
+          reset: !0
+        }
+      }
+    },
+    methods: {
+      addEventHandlers() {
+        this.$refs.jumbotron.addEventListener('mouseenter', this.onMouseEnter())
+        this.$refs.jumbotron.addEventListener('mousemove', this.onMouseMove())
+        this.$refs.jumbotron.addEventListener('mouseleave', this.onMouseLeave())
+      },
+      onMouseEnter() {
+        const target = this.$refs.jumbotron
+        this.width = target.offsetWidth
+        this.height = target.offsetHeight
+        this.left = target.offsetLeft
+        this.top = target.offsetTop
+        this.setTransition()
+        this.layers.forEach(function (a) {
+          a.node.style.transition = this.config.speed + 'ms ' + this.config.easing
+          this.translateLayers(a, target.clientX, target.clientY)
+        })
+        setTimeout(function () {
+          this.layers.forEach(function (s) {
+            s.node.style.transition = 'none'
+          })
+        }, this.config.speed)
+      },
+      onMouseMove() {
+        const target = this.$refs.jumbotron
+        const a = this.getValues(target)
+        this.target.style.transform = `perspective(${this.config.perspective}px) rotateX(${(this.config.disabledAxis ? 0 : a.tiltY)}deg) rotateY(${(this.config.disabledAxis ? 0 : a.tiltX)} + 'deg) scale3d(${this.config.scale}, ${this.config.scale}, ${this.config.scale})`
+        window.requestAnimationFrame(() => {
+          this.layers.forEach(function (a) {
+            this.translateLayers(a, s.clientX, s.clientY)
+          })
+        })
+      },
+      getValues(s) {
+        var t = (s.pageX - this.left) / this.width, a = (s.pageY - this.top) / this.height
+        return t = Math.min(Math.max(t, 0), 1), a = Math.min(Math.max(a, 0), 1), {
+          tiltX: (this.config.reverseTilt ? -1 : 1) * (this.config.max / 2 - t * this.config.max).toFixed(2),
+          tiltY: (this.config.reverseTilt ? -1 : 1) * (a * this.config.max - this.config.max / 2).toFixed(2)
+        }
+      }
+    }
+  }
 
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus" scoped>
-  .headerWrapper {
-    height: 80px;
-  }
+  .headerWrapper
+    height 80px
 
   .header
-    height: 80px;
-    background-color: #fff;
-    color: #fff;
-    top: 0;
-    left: 0;
-    width: 100%;
-    line-height: 80px;
-    z-index: 100;
-    position: relative;
+    height 80px
+    background-color #fff
+    color #fff
+    top 0
+    left 0
+    width 100%
+    line-height 80px
+    z-index 100
+    position relative
     .nav-logo
-      vertical-align: sub;
+      vertical-align sub
     h1
-      margin: 0;
-      float: left;
-      font-size: 32px;
-      font-weight: 400;
+      margin 0
+      float left
+      font-size 32px
+      font-weight 400
     .nav
-      float: right;
-      height: 100%;
-      line-height: 80px;
-      background: transparent;
-      padding: 0;
-      margin: 0;
+      float right
+      height 100%
+      line-height 80px
+      background transparent
+      padding 0
+      margin 0
     .nav-item
-      margin: 0;
-      float: left;
-      list-style: none;
-      position: relative;
-      cursor: pointer;
+      margin 0
+      float left
+      list-style none
+      position relative
+      cursor pointer
       a
-        text-decoration: none;
-        color: #888;
-        display: block;
-        padding: 0 22px;
+        text-decoration none
+        color #888
+        display block
+        padding 0 22px
 
   .container
-    height: 100%;
-    box-sizing: border-box;
-    width: 1140px;
-    padding: 0;
-    margin: 0 auto;
+    height 100%
+    box-sizing border-box
+    width 1140px
+    padding 0
+    margin 0 auto
+
   .main-cnt
-    margin-top: -80px;
-    padding: 80px 0 340px;
-    box-sizing: border-box;
-    min-height: 100%;
+    margin-top -80px
+    padding 80px 0 340px
+    box-sizing border-box
+    min-height 100%
+
   .banner
-    text-align: center;
+    text-align center
+
   .banner-desc
-    padding-top: 20px;
+    padding-top 20px
     h1
-      font-size: 34px;
-      margin: 0;
-      line-height: 48px;
-      color: #555;
+      font-size 34px
+      margin 0
+      line-height 48px
+      color #555
     p
-      font-size: 18px;
-      line-height: 28px;
-      color: #888;
-      margin: 10px 0 5px;
+      font-size 18px
+      line-height 28px
+      color #888
+      margin 10px 0 5px
+
   .jumbotron
-    width: 890px;
-    height: 465px;
-    margin: 30px auto;
-    position: relative;
+    width 890px
+    height 465px
+    margin 30px auto
+    position relative
     div
-      width: 100%;
-      height: 100%;
-      background-color: transparent;
-      position: absolute;
-      top: 0;
-      left: 0;
+      width 100%
+      height 100%
+      background-color transparent
+      position absolute
+      top 0
+      left 0
     img
-      position: absolute;
+      position absolute
     .jumbotron-web
-      height: 385px;
-      top: 35px;
-      left: 110px;
+      height 385px
+      top 35px
+      left 110px
     .jumbotron-plant-1
-      bottom: 0;
-      left: 30px;
-      height: 185px;
+      bottom 0
+      left 30px
+      height 185px
     .jumbotron-plant-2
-      left: 60px;
-      top: 200px;
+      left 60px
+      top 200px
     .jumbotron-figure-1
-      bottom: 0;
-      right: 180px;
-      height: 140px;
+      bottom 0
+      right 180px
+      height 140px
     .jumbotron-figure-2
-      bottom: 0;
-      right: 10px;
-      height: 68px;
+      bottom 0
+      right 10px
+      height 68px
     .jumbotron-cloud-1
-      right: 0;
-      top: 0;
-      height: 55px;
+      right 0
+      top 0
+      height 55px
     .jumbotron-cloud-2
-      left: 0;
-      top: 50px;
-      height: 55px;
+      left 0
+      top 50px
+      height 55px
     .jumbotron-compo-1
-      left: 94px;
-      height: 90px;
-      top: 220px;
+      left 94px
+      height 90px
+      top 220px
     .jumbotron-compo-2
-      right: 73px;
-      top: 60px;
-      height: 124px;
+      right 73px
+      top 60px
+      height 124px
+    .jumbotron-compo-3
+      right 42px
+      top 200px
+      height 120px
+
   .sponsor
-    margin: 0 auto 50px;
-    display: flex;
-    width: 400px;
-    height: 100px;
-    -ms-flex-pack: center;
-    justify-content: center;
+    margin 0 auto 50px
+    display flex
+    width 400px
+    height 100px
+    -ms-flex-pack center
+    justify-content center
 </style>
